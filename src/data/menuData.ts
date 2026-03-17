@@ -228,7 +228,7 @@ export const menuItems: MenuItem[] = [
     name: "Sopa de Lentejas",
     description: "Sopa cremosa de lentejas rojas con especias",
     price: 6.99,
-    image: sopaLentejasPlaceholder,
+    image: sopaLentejasImg,
     category: "cocina",
     pairsWellWith: ["borek", "lahmacun"],
   },
