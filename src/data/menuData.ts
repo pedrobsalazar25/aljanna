@@ -143,7 +143,7 @@ export const menuItems: MenuItem[] = [
     name: "Profiteroles",
     description: "Bolitas de masa rellenas de crema con chocolate",
     price: 7.99,
-    image: profiterolesPlaceholder,
+    image: profiterolesImg,
     category: "postres",
     pairsWellWith: ["cerveza-brahva"],
   },
