@@ -329,7 +329,7 @@ export const menuItems: MenuItem[] = [
     name: "Whisky Balvenie",
     description: "Whisky escocés de malta con carácter distintivo",
     price: 69.99,
-    image: balveniePlaceholder,
+    image: balvenieImg,
     category: "bebidas",
     pairsWellWith: ["profiteroles"],
   },
