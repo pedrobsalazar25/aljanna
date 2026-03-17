@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/context/CartContext";
 import BottomNav from "@/components/BottomNav";
+import TopNav from "@/components/TopNav";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
 import HomePage from "@/pages/HomePage";
 import MenuCategoryPage from "@/pages/MenuCategoryPage";
