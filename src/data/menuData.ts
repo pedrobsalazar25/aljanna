@@ -235,7 +235,7 @@ export const menuItems: MenuItem[] = [
     name: "Pescado a la Parrilla",
     description: "Lubina fresca a la parrilla con limón y hierbas",
     price: 15.99,
-    image: pescadoPlaceholder,
+    image: pescadoImg,
     category: "cocina",
     pairsWellWith: ["cerveza-polar", "cerveza-macuto"],
   },
