@@ -210,7 +210,7 @@ export const menuItems: MenuItem[] = [
     name: "Pide",
     description: "Masa en forma de bote con queso y carne",
     price: 10.99,
-    image: pidePlaceholder,
+    image: pideImg,
     category: "cocina",
     pairsWellWith: ["cerveza-macuto"],
   },
