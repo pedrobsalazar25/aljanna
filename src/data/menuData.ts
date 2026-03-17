@@ -18,20 +18,22 @@ import lahmacunImg from "@/assets/dishes/Lahmacun.png";
 import mezeImg from "@/assets/dishes/Meze.png";
 import pescadoImg from "@/assets/dishes/Pescado_a_la_Parrilla.png";
 
-// Placeholder images for items not yet uploaded
-import tulumbaPlaceholder from "@/assets/dishes/Crispy_Honey_Pastry.png";
-import revaniPlaceholder from "@/assets/dishes/baklava.jpg";
-import sutlacPlaceholder from "@/assets/dishes/sutlac.jpg";
-import profiterolesPlaceholder from "@/assets/dishes/baklava.jpg";
-import shishKebabPlaceholder from "@/assets/dishes/Kebab_Adana.png";
-import pidePlaceholder from "@/assets/dishes/Lahmacun.png";
-import sopaLentejasPlaceholder from "@/assets/dishes/lentil-soup.jpg";
-import regionalPlaceholder from "@/assets/dishes/Cerveza_Polar.png";
-import macallanPlaceholder from "@/assets/dishes/turkish-coffee.jpg";
-import glenmorangiePlaceholder from "@/assets/dishes/turkish-coffee.jpg";
-import glenfiddichPlaceholder from "@/assets/dishes/turkish-coffee.jpg";
-import johnnieWalkerPlaceholder from "@/assets/dishes/turkish-coffee.jpg";
-import balveniePlaceholder from "@/assets/dishes/turkish-coffee.jpg";
+// Batch 3 images (now real)
+import tulumbaImg from "@/assets/dishes/Tulumba.png";
+import revaniImg from "@/assets/dishes/Revani.png";
+import sutlacImg from "@/assets/dishes/Sutlac.png";
+import profiterolesImg from "@/assets/dishes/Profiteroles.png";
+import shishKebabImg from "@/assets/dishes/Shish_Kebab.png";
+import pideImg from "@/assets/dishes/Pide.png";
+import sopaLentejasImg from "@/assets/dishes/Sopa_de_Lentejas.png";
+import regionalImg from "@/assets/dishes/Regional.png";
+import glenfiddichImg from "@/assets/dishes/Whisky_Glenfiddich.png";
+import balvenieImg from "@/assets/dishes/Whisky_Balvenie.png";
+
+// Still placeholder (Whisky Macallan, Glenmorangie, Johnnie Walker)
+import macallanPlaceholder from "@/assets/dishes/Whisky_Balvenie.png";
+import glenmorangiePlaceholder from "@/assets/dishes/Whisky_Glenfiddich.png";
+import johnnieWalkerPlaceholder from "@/assets/dishes/Whisky_Balvenie.png";
 
 import heroBg from "@/assets/hero-bg.jpg";
 import eventNight from "@/assets/event-night.jpg";
