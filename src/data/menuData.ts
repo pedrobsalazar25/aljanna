@@ -134,7 +134,7 @@ export const menuItems: MenuItem[] = [
     name: "Sütlaç",
     description: "Budín cremoso de arroz con canela y pistacho",
     price: 4.99,
-    image: sutlacPlaceholder,
+    image: sutlacImg,
     category: "postres",
     pairsWellWith: ["cerveza-polar"],
   },
