@@ -1,16 +1,42 @@
-import kebabPlatter from "@/assets/dishes/kebab-platter.jpg";
-import shawarma from "@/assets/dishes/shawarma.jpg";
-import lahmacun from "@/assets/dishes/lahmacun.jpg";
-import lentilSoup from "@/assets/dishes/lentil-soup.jpg";
-import hummus from "@/assets/dishes/hummus.jpg";
-import falafel from "@/assets/dishes/falafel.jpg";
-import baklava from "@/assets/dishes/baklava.jpg";
-import kunefe from "@/assets/dishes/kunefe.jpg";
-import sutlac from "@/assets/dishes/sutlac.jpg";
-import turkishTea from "@/assets/dishes/turkish-tea.jpg";
-import turkishCoffee from "@/assets/dishes/turkish-coffee.jpg";
-import ayran from "@/assets/dishes/ayran.jpg";
-import limonada from "@/assets/dishes/limonada.jpg";
+// Real dish images (uploaded)
+import baklavaImg from "@/assets/dishes/Baklava.png";
+import borekImg from "@/assets/dishes/Borek.png";
+import cervezaBrahvaImg from "@/assets/dishes/Cerveza_Brahva.png";
+import cervezaMacutoImg from "@/assets/dishes/Cerveza_Macuto.png";
+import cervezaPolarImg from "@/assets/dishes/Cerveza_Polar.png";
+import crispyHoneyImg from "@/assets/dishes/Crispy_Honey_Pastry.png";
+import dedosAzucarImg from "@/assets/dishes/Dedos_de_Azucar.png";
+import deliciasTurcasImg from "@/assets/dishes/Delicias_Turcas.png";
+import donerKebabImg from "@/assets/dishes/Doner_Kebab.png";
+
+// Placeholder images (generated) for items not yet uploaded
+import kunafaPlaceholder from "@/assets/dishes/kunefe.jpg";
+import tulumbaPlaceholder from "@/assets/dishes/Crispy_Honey_Pastry.png";
+import halvaPlaceholder from "@/assets/dishes/sutlac.jpg";
+import revaniPlaceholder from "@/assets/dishes/baklava.jpg";
+import kadayifPlaceholder from "@/assets/dishes/kunefe.jpg";
+import sutlacPlaceholder from "@/assets/dishes/sutlac.jpg";
+import profiterolesPlaceholder from "@/assets/dishes/baklava.jpg";
+import mezePlaceholder from "@/assets/dishes/hummus.jpg";
+import kebabAdanaPlaceholder from "@/assets/dishes/kebab-platter.jpg";
+import shishKebabPlaceholder from "@/assets/dishes/kebab-platter.jpg";
+import koftePlaceholder from "@/assets/dishes/falafel.jpg";
+import lahmacunPlaceholder from "@/assets/dishes/lahmacun.jpg";
+import pidePlaceholder from "@/assets/dishes/lahmacun.jpg";
+import sopaLentejasPlaceholder from "@/assets/dishes/lentil-soup.jpg";
+import pescadoPlaceholder from "@/assets/dishes/kebab-platter.jpg";
+import regionalPlaceholder from "@/assets/dishes/Cerveza_Polar.png";
+import soleraPlaceholder from "@/assets/dishes/Cerveza_Polar.png";
+import macallanPlaceholder from "@/assets/dishes/turkish-coffee.jpg";
+import glenmorangiePlaceholder from "@/assets/dishes/turkish-coffee.jpg";
+import glenfiddichPlaceholder from "@/assets/dishes/turkish-coffee.jpg";
+import johnnieWalkerPlaceholder from "@/assets/dishes/turkish-coffee.jpg";
+import balveniePlaceholder from "@/assets/dishes/turkish-coffee.jpg";
+
+import heroBg from "@/assets/hero-bg.jpg";
+import eventNight from "@/assets/event-night.jpg";
+
+export { heroBg, eventNight };
 
 export type Category = "cocina" | "postres" | "bebidas";
 
@@ -26,129 +52,284 @@ export interface MenuItem {
 }
 
 export const menuItems: MenuItem[] = [
-  // COCINA
-  {
-    id: "kebab-platter",
-    name: "Plato de Kebab Mixto",
-    description: "Selección de kebabs de cordero y pollo a la parrilla, servidos con arroz aromático, vegetales asados y salsa de yogur casera.",
-    price: 18.50,
-    image: kebabPlatter,
-    category: "cocina",
-    isChefRecommendation: true,
-    pairsWellWith: ["ayran", "te-turco"],
-  },
-  {
-    id: "shawarma",
-    name: "Shawarma de Pollo",
-    description: "Tiernas rebanadas de pollo marinado en especias orientales, envueltas en pan pita con vegetales frescos y salsa tahini.",
-    price: 12.00,
-    image: shawarma,
-    category: "cocina",
-    pairsWellWith: ["limonada", "ayran"],
-  },
-  {
-    id: "lahmacun",
-    name: "Lahmacun",
-    description: "Pizza turca tradicional con carne molida especiada, hierbas frescas y un toque de limón. Crujiente y aromática.",
-    price: 9.50,
-    image: lahmacun,
-    category: "cocina",
-    pairsWellWith: ["ayran", "te-turco"],
-  },
-  {
-    id: "sopa-lentejas",
-    name: "Sopa de Lentejas",
-    description: "Sopa tradicional turca de lentejas rojas, suavemente especiada con comino y pimentón, servida con limón fresco.",
-    price: 7.00,
-    image: lentilSoup,
-    category: "cocina",
-    pairsWellWith: ["lahmacun"],
-  },
-  {
-    id: "hummus",
-    name: "Hummus Clásico",
-    description: "Crema sedosa de garbanzos con tahini, aceite de oliva virgen extra, pimentón ahumado y pan pita caliente.",
-    price: 8.00,
-    image: hummus,
-    category: "cocina",
-    pairsWellWith: ["falafel", "lahmacun"],
-  },
-  {
-    id: "falafel",
-    name: "Falafel",
-    description: "Croquetas crujientes de garbanzos y hierbas, servidas con ensalada fresca y salsa tahini. Opción vegetariana estrella.",
-    price: 10.00,
-    image: falafel,
-    category: "cocina",
-    isChefRecommendation: true,
-    pairsWellWith: ["hummus", "limonada"],
-  },
-  // POSTRES
+  // ===== POSTRES =====
   {
     id: "baklava",
-    name: "Baklava de Pistacho",
-    description: "Capas crujientes de masa filo rellenas de pistacho triturado, bañadas en almíbar de miel y agua de rosas.",
-    price: 8.50,
-    image: baklava,
+    name: "Baklava",
+    description: "Hojaldre crujiente con capas de miel y pistachos",
+    price: 8.99,
+    image: baklavaImg,
     category: "postres",
     isChefRecommendation: true,
-    pairsWellWith: ["cafe-turco", "te-turco"],
+    pairsWellWith: ["cerveza-polar", "cerveza-brahva"],
   },
   {
-    id: "kunefe",
-    name: "Künefe",
-    description: "Postre caliente de queso fundido entre hilos de masa kadayif, bañado en almíbar dulce y decorado con pistacho.",
-    price: 10.00,
-    image: kunefe,
+    id: "kunafa",
+    name: "Kunafa",
+    description: "Masa desmenuzada con relleno de crema y pistachos",
+    price: 7.99,
+    image: kunafaPlaceholder,
     category: "postres",
-    pairsWellWith: ["cafe-turco"],
+    isChefRecommendation: true,
+    pairsWellWith: ["cerveza-macuto"],
+  },
+  {
+    id: "delicias-turcas",
+    name: "Delicias Turcas",
+    description: "Cubos de gelatina cubiertos con azúcar en polvo",
+    price: 5.99,
+    image: deliciasTurcasImg,
+    category: "postres",
+    pairsWellWith: ["cerveza-polar"],
+  },
+  {
+    id: "tulumba",
+    name: "Tulumba",
+    description: "Masa frita empapada en almíbar de miel",
+    price: 6.99,
+    image: tulumbaPlaceholder,
+    category: "postres",
+    pairsWellWith: ["cerveza-brahva"],
+  },
+  {
+    id: "halva",
+    name: "Halva",
+    description: "Pasta cremosa de sésamo con adorno de pistacho",
+    price: 7.49,
+    image: halvaPlaceholder,
+    category: "postres",
+    pairsWellWith: ["cerveza-macuto"],
+  },
+  {
+    id: "dedos-de-azucar",
+    name: "Dedos de Azúcar",
+    description: "Dedos de masa frita crujiente con almíbar",
+    price: 6.49,
+    image: dedosAzucarImg,
+    category: "postres",
+    pairsWellWith: ["cerveza-polar"],
+  },
+  {
+    id: "revani",
+    name: "Revani",
+    description: "Bizcocho de sémola con cobertura de coco",
+    price: 5.99,
+    image: revaniPlaceholder,
+    category: "postres",
+    pairsWellWith: ["cerveza-brahva"],
+  },
+  {
+    id: "kadayif",
+    name: "Kadayif",
+    description: "Masa desmenuzada crujiente con frutos secos y miel",
+    price: 8.49,
+    image: kadayifPlaceholder,
+    category: "postres",
+    pairsWellWith: ["cerveza-macuto"],
   },
   {
     id: "sutlac",
     name: "Sütlaç",
-    description: "Arroz con leche turco horneado, con una capa caramelizada. Cremoso, reconfortante y con un toque de vainilla.",
-    price: 7.50,
-    image: sutlac,
+    description: "Budín cremoso de arroz con canela y pistacho",
+    price: 4.99,
+    image: sutlacPlaceholder,
     category: "postres",
-    pairsWellWith: ["te-turco"],
-  },
-  // BEBIDAS
-  {
-    id: "te-turco",
-    name: "Té Turco",
-    description: "Té negro tradicional servido en vaso de tulipán con borde dorado. Intenso, aromático y reconfortante.",
-    price: 3.50,
-    image: turkishTea,
-    category: "bebidas",
-    pairsWellWith: ["baklava", "kunefe"],
+    pairsWellWith: ["cerveza-polar"],
   },
   {
-    id: "cafe-turco",
-    name: "Café Turco",
-    description: "Preparado en cezve de cobre tradicional, con cardamomo y servido con un dulce de lokum. Una experiencia única.",
-    price: 4.50,
-    image: turkishCoffee,
-    category: "bebidas",
+    id: "profiteroles",
+    name: "Profiteroles",
+    description: "Bolitas de masa rellenas de crema con chocolate",
+    price: 7.99,
+    image: profiterolesPlaceholder,
+    category: "postres",
+    pairsWellWith: ["cerveza-brahva"],
+  },
+
+  // ===== COCINA =====
+  {
+    id: "meze",
+    name: "Meze",
+    description: "Tabla de aperitivos turcos variados con pan pita",
+    price: 12.99,
+    image: mezePlaceholder,
+    category: "cocina",
     isChefRecommendation: true,
-    pairsWellWith: ["baklava", "kunefe"],
+    pairsWellWith: ["cerveza-polar", "cerveza-macuto"],
   },
   {
-    id: "ayran",
-    name: "Ayran",
-    description: "Bebida refrescante de yogur batido con sal y menta. El acompañante perfecto para platos especiados.",
-    price: 3.00,
-    image: ayran,
-    category: "bebidas",
-    pairsWellWith: ["kebab-platter", "shawarma"],
+    id: "kebab-adana",
+    name: "Kebab Adana",
+    description: "Carne molida a la parrilla con hierbas y especias",
+    price: 13.99,
+    image: kebabAdanaPlaceholder,
+    category: "cocina",
+    isChefRecommendation: true,
+    pairsWellWith: ["cerveza-brahva", "cerveza-polar"],
   },
   {
-    id: "limonada",
-    name: "Limonada con Menta",
-    description: "Limonada fresca preparada con limones naturales, hojas de menta y un toque de miel. Servida con hielo.",
-    price: 4.00,
-    image: limonada,
+    id: "shish-kebab",
+    name: "Shish Kebab",
+    description: "Brochetas de carne y verduras a la parrilla",
+    price: 14.99,
+    image: shishKebabPlaceholder,
+    category: "cocina",
+    pairsWellWith: ["cerveza-macuto", "cerveza-polar"],
+  },
+  {
+    id: "doner-kebab",
+    name: "Döner Kebab",
+    description: "Carne asada en rodajas con lechuga y tomate",
+    price: 11.99,
+    image: donerKebabImg,
+    category: "cocina",
+    pairsWellWith: ["cerveza-brahva", "cerveza-macuto"],
+  },
+  {
+    id: "kofte",
+    name: "Köfte",
+    description: "Albóndigas de cordero a la parrilla con hierbas",
+    price: 12.49,
+    image: koftePlaceholder,
+    category: "cocina",
+    pairsWellWith: ["cerveza-polar"],
+  },
+  {
+    id: "lahmacun",
+    name: "Lahmacun",
+    description: "Pizza turca fina con carne molida",
+    price: 9.99,
+    image: lahmacunPlaceholder,
+    category: "cocina",
+    pairsWellWith: ["cerveza-brahva"],
+  },
+  {
+    id: "pide",
+    name: "Pide",
+    description: "Masa en forma de bote con queso y carne",
+    price: 10.99,
+    image: pidePlaceholder,
+    category: "cocina",
+    pairsWellWith: ["cerveza-macuto"],
+  },
+  {
+    id: "borek",
+    name: "Börek",
+    description: "Rollos crujientes de masa con queso y espinaca",
+    price: 9.49,
+    image: borekImg,
+    category: "cocina",
+    pairsWellWith: ["cerveza-polar", "cerveza-brahva"],
+  },
+  {
+    id: "sopa-lentejas",
+    name: "Sopa de Lentejas",
+    description: "Sopa cremosa de lentejas rojas con especias",
+    price: 6.99,
+    image: sopaLentejasPlaceholder,
+    category: "cocina",
+    pairsWellWith: ["borek", "lahmacun"],
+  },
+  {
+    id: "pescado-parrilla",
+    name: "Pescado a la Parrilla",
+    description: "Lubina fresca a la parrilla con limón y hierbas",
+    price: 15.99,
+    image: pescadoPlaceholder,
+    category: "cocina",
+    pairsWellWith: ["cerveza-polar", "cerveza-macuto"],
+  },
+
+  // ===== BEBIDAS =====
+  {
+    id: "cerveza-polar",
+    name: "Cerveza Polar",
+    description: "Cerveza lager venezolana dorada y refrescante",
+    price: 4.99,
+    image: cervezaPolarImg,
     category: "bebidas",
-    pairsWellWith: ["falafel", "shawarma"],
+    pairsWellWith: ["kebab-adana", "doner-kebab"],
+  },
+  {
+    id: "regional",
+    name: "Regional",
+    description: "Cerveza venezolana de sabor suave y equilibrado",
+    price: 4.49,
+    image: regionalPlaceholder,
+    category: "bebidas",
+    pairsWellWith: ["shish-kebab", "borek"],
+  },
+  {
+    id: "cerveza-solera",
+    name: "Cerveza Solera",
+    description: "Cerveza venezolana con cuerpo y carácter",
+    price: 4.99,
+    image: soleraPlaceholder,
+    category: "bebidas",
+    pairsWellWith: ["kofte", "meze"],
+  },
+  {
+    id: "cerveza-macuto",
+    name: "Cerveza Macuto",
+    description: "Cerveza venezolana artesanal con toque especial",
+    price: 5.49,
+    image: cervezaMacutoImg,
+    category: "bebidas",
+    pairsWellWith: ["kebab-adana", "pide"],
+  },
+  {
+    id: "cerveza-brahva",
+    name: "Cerveza Brahva",
+    description: "Cerveza venezolana premium con sabor robusto",
+    price: 5.99,
+    image: cervezaBrahvaImg,
+    category: "bebidas",
+    pairsWellWith: ["doner-kebab", "lahmacun"],
+  },
+  {
+    id: "whisky-macallan",
+    name: "Whisky Macallan",
+    description: "Whisky escocés premium de 18 años",
+    price: 89.99,
+    image: macallanPlaceholder,
+    category: "bebidas",
+    pairsWellWith: ["baklava"],
+  },
+  {
+    id: "whisky-glenmorangie",
+    name: "Whisky Glenmorangie",
+    description: "Whisky escocés suave y elegante de 10 años",
+    price: 49.99,
+    image: glenmorangiePlaceholder,
+    category: "bebidas",
+    pairsWellWith: ["kunafa"],
+  },
+  {
+    id: "whisky-glenfiddich",
+    name: "Whisky Glenfiddich",
+    description: "Whisky escocés de malta con sabor complejo",
+    price: 59.99,
+    image: glenfiddichPlaceholder,
+    category: "bebidas",
+    pairsWellWith: ["baklava"],
+  },
+  {
+    id: "whisky-johnnie-walker",
+    name: "Whisky Johnnie Walker",
+    description: "Whisky escocés blended de renombre mundial",
+    price: 39.99,
+    image: johnnieWalkerPlaceholder,
+    category: "bebidas",
+    pairsWellWith: ["kadayif"],
+  },
+  {
+    id: "whisky-balvenie",
+    name: "Whisky Balvenie",
+    description: "Whisky escocés de malta con carácter distintivo",
+    price: 69.99,
+    image: balveniePlaceholder,
+    category: "bebidas",
+    pairsWellWith: ["profiteroles"],
   },
 ];
 
