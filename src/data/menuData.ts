@@ -311,7 +311,7 @@ export const menuItems: MenuItem[] = [
     name: "Whisky Glenfiddich",
     description: "Whisky escocés de malta con sabor complejo",
     price: 59.99,
-    image: glenfiddichPlaceholder,
+    image: glenfiddichImg,
     category: "bebidas",
     pairsWellWith: ["baklava"],
   },
