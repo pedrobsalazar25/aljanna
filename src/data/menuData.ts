@@ -116,7 +116,7 @@ export const menuItems: MenuItem[] = [
     name: "Revani",
     description: "Bizcocho de sémola con cobertura de coco",
     price: 5.99,
-    image: revaniPlaceholder,
+    image: revaniImg,
     category: "postres",
     pairsWellWith: ["cerveza-brahva"],
   },
