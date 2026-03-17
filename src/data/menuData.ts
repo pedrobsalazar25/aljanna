@@ -152,7 +152,7 @@ export const menuItems: MenuItem[] = [
     name: "Meze",
     description: "Tabla de aperitivos turcos variados con pan pita",
     price: 12.99,
-    image: mezePlaceholder,
+    image: mezeImg,
     category: "cocina",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-polar", "cerveza-macuto"],
