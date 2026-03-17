@@ -89,7 +89,7 @@ export const menuItems: MenuItem[] = [
     name: "Tulumba",
     description: "Masa frita empapada en almíbar de miel",
     price: 6.99,
-    image: tulumbaPlaceholder,
+    image: tulumbaImg,
     category: "postres",
     pairsWellWith: ["cerveza-brahva"],
   },
