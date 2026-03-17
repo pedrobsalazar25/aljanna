@@ -101,7 +101,7 @@ const HomePage = () => {
       </section>
 
       {/* Info Block */}
-      <section className="px-4 mt-10 mb-6">
+      <section id="contact-section" className="px-4 mt-10 mb-6">
         <h2 className="font-heading text-xl font-bold text-foreground mb-4">Encuéntranos</h2>
         <div className="glass-gold rounded-xl p-5 space-y-4">
           <div className="flex items-start gap-3">
