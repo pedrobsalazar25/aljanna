@@ -4,29 +4,29 @@ import borekImg from "@/assets/dishes/Borek.png";
 import cervezaBrahvaImg from "@/assets/dishes/Cerveza_Brahva.png";
 import cervezaMacutoImg from "@/assets/dishes/Cerveza_Macuto.png";
 import cervezaPolarImg from "@/assets/dishes/Cerveza_Polar.png";
+import cervezaSoleraImg from "@/assets/dishes/Cerveza_Solera.png";
 import crispyHoneyImg from "@/assets/dishes/Crispy_Honey_Pastry.png";
 import dedosAzucarImg from "@/assets/dishes/Dedos_de_Azucar.png";
 import deliciasTurcasImg from "@/assets/dishes/Delicias_Turcas.png";
 import donerKebabImg from "@/assets/dishes/Doner_Kebab.png";
+import halvaImg from "@/assets/dishes/Halva.png";
+import kadayifImg from "@/assets/dishes/Kadayif.png";
+import kebabAdanaImg from "@/assets/dishes/Kebab_Adana.png";
+import kofteImg from "@/assets/dishes/Kofte.png";
+import kunafaImg from "@/assets/dishes/Kunafa.png";
+import lahmacunImg from "@/assets/dishes/Lahmacun.png";
+import mezeImg from "@/assets/dishes/Meze.png";
+import pescadoImg from "@/assets/dishes/Pescado_a_la_Parrilla.png";
 
-// Placeholder images (generated) for items not yet uploaded
-import kunafaPlaceholder from "@/assets/dishes/kunefe.jpg";
+// Placeholder images for items not yet uploaded
 import tulumbaPlaceholder from "@/assets/dishes/Crispy_Honey_Pastry.png";
-import halvaPlaceholder from "@/assets/dishes/sutlac.jpg";
 import revaniPlaceholder from "@/assets/dishes/baklava.jpg";
-import kadayifPlaceholder from "@/assets/dishes/kunefe.jpg";
 import sutlacPlaceholder from "@/assets/dishes/sutlac.jpg";
 import profiterolesPlaceholder from "@/assets/dishes/baklava.jpg";
-import mezePlaceholder from "@/assets/dishes/hummus.jpg";
-import kebabAdanaPlaceholder from "@/assets/dishes/kebab-platter.jpg";
-import shishKebabPlaceholder from "@/assets/dishes/kebab-platter.jpg";
-import koftePlaceholder from "@/assets/dishes/falafel.jpg";
-import lahmacunPlaceholder from "@/assets/dishes/lahmacun.jpg";
-import pidePlaceholder from "@/assets/dishes/lahmacun.jpg";
+import shishKebabPlaceholder from "@/assets/dishes/Kebab_Adana.png";
+import pidePlaceholder from "@/assets/dishes/Lahmacun.png";
 import sopaLentejasPlaceholder from "@/assets/dishes/lentil-soup.jpg";
-import pescadoPlaceholder from "@/assets/dishes/kebab-platter.jpg";
 import regionalPlaceholder from "@/assets/dishes/Cerveza_Polar.png";
-import soleraPlaceholder from "@/assets/dishes/Cerveza_Polar.png";
 import macallanPlaceholder from "@/assets/dishes/turkish-coffee.jpg";
 import glenmorangiePlaceholder from "@/assets/dishes/turkish-coffee.jpg";
 import glenfiddichPlaceholder from "@/assets/dishes/turkish-coffee.jpg";
@@ -68,7 +68,7 @@ export const menuItems: MenuItem[] = [
     name: "Kunafa",
     description: "Masa desmenuzada con relleno de crema y pistachos",
     price: 7.99,
-    image: kunafaPlaceholder,
+    image: kunafaImg,
     category: "postres",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-macuto"],
@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
     name: "Halva",
     description: "Pasta cremosa de sésamo con adorno de pistacho",
     price: 7.49,
-    image: halvaPlaceholder,
+    image: halvaImg,
     category: "postres",
     pairsWellWith: ["cerveza-macuto"],
   },
@@ -123,7 +123,7 @@ export const menuItems: MenuItem[] = [
     name: "Kadayif",
     description: "Masa desmenuzada crujiente con frutos secos y miel",
     price: 8.49,
-    image: kadayifPlaceholder,
+    image: kadayifImg,
     category: "postres",
     pairsWellWith: ["cerveza-macuto"],
   },
@@ -152,7 +152,7 @@ export const menuItems: MenuItem[] = [
     name: "Meze",
     description: "Tabla de aperitivos turcos variados con pan pita",
     price: 12.99,
-    image: mezePlaceholder,
+    image: mezeImg,
     category: "cocina",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-polar", "cerveza-macuto"],
@@ -162,7 +162,7 @@ export const menuItems: MenuItem[] = [
     name: "Kebab Adana",
     description: "Carne molida a la parrilla con hierbas y especias",
     price: 13.99,
-    image: kebabAdanaPlaceholder,
+    image: kebabAdanaImg,
     category: "cocina",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-brahva", "cerveza-polar"],
@@ -190,7 +190,7 @@ export const menuItems: MenuItem[] = [
     name: "Köfte",
     description: "Albóndigas de cordero a la parrilla con hierbas",
     price: 12.49,
-    image: koftePlaceholder,
+    image: kofteImg,
     category: "cocina",
     pairsWellWith: ["cerveza-polar"],
   },
@@ -199,7 +199,7 @@ export const menuItems: MenuItem[] = [
     name: "Lahmacun",
     description: "Pizza turca fina con carne molida",
     price: 9.99,
-    image: lahmacunPlaceholder,
+    image: lahmacunImg,
     category: "cocina",
     pairsWellWith: ["cerveza-brahva"],
   },
@@ -235,7 +235,7 @@ export const menuItems: MenuItem[] = [
     name: "Pescado a la Parrilla",
     description: "Lubina fresca a la parrilla con limón y hierbas",
     price: 15.99,
-    image: pescadoPlaceholder,
+    image: pescadoImg,
     category: "cocina",
     pairsWellWith: ["cerveza-polar", "cerveza-macuto"],
   },
@@ -264,7 +264,7 @@ export const menuItems: MenuItem[] = [
     name: "Cerveza Solera",
     description: "Cerveza venezolana con cuerpo y carácter",
     price: 4.99,
-    image: soleraPlaceholder,
+    image: cervezaSoleraImg,
     category: "bebidas",
     pairsWellWith: ["kofte", "meze"],
   },
