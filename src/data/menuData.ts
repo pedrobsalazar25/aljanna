@@ -162,7 +162,7 @@ export const menuItems: MenuItem[] = [
     name: "Kebab Adana",
     description: "Carne molida a la parrilla con hierbas y especias",
     price: 13.99,
-    image: kebabAdanaPlaceholder,
+    image: kebabAdanaImg,
     category: "cocina",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-brahva", "cerveza-polar"],
