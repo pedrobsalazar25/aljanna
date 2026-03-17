@@ -123,7 +123,7 @@ export const menuItems: MenuItem[] = [
     name: "Kadayif",
     description: "Masa desmenuzada crujiente con frutos secos y miel",
     price: 8.49,
-    image: kadayifPlaceholder,
+    image: kadayifImg,
     category: "postres",
     pairsWellWith: ["cerveza-macuto"],
   },
