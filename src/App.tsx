@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { CartProvider } from "@/context/CartContext";
 import BottomNav from "@/components/BottomNav";
+import TopNav from "@/components/TopNav";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
 import HomePage from "@/pages/HomePage";
 import MenuCategoryPage from "@/pages/MenuCategoryPage";
@@ -22,17 +23,20 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <div className="max-w-lg mx-auto relative min-h-screen bg-background">
-            <Routes>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/cocina" element={<MenuCategoryPage category="cocina" />} />
-              <Route path="/postres" element={<MenuCategoryPage category="postres" />} />
-              <Route path="/bebidas" element={<MenuCategoryPage category="bebidas" />} />
-              <Route path="/plato/:id" element={<ProductPage />} />
-              <Route path="/carrito" element={<CartPage />} />
-              <Route path="/eventos" element={<EventsPage />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
+          <div className="max-w-lg mx-auto relative min-h-screen animated-gradient-bg">
+            <TopNav />
+            <div className="pt-14">
+              <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/cocina" element={<MenuCategoryPage category="cocina" />} />
+                <Route path="/postres" element={<MenuCategoryPage category="postres" />} />
+                <Route path="/bebidas" element={<MenuCategoryPage category="bebidas" />} />
+                <Route path="/plato/:id" element={<ProductPage />} />
+                <Route path="/carrito" element={<CartPage />} />
+                <Route path="/eventos" element={<EventsPage />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </div>
             <WhatsAppBubble />
             <BottomNav />
           </div>
