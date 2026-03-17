@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { UtensilsCrossed, Cake, Wine, MapPin, Clock, Phone, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
-import heroBg from "@/assets/hero-bg.jpg";
-import eventNight from "@/assets/event-night.jpg";
-import { getChefRecommendations, events } from "@/data/menuData";
+import { heroBg, eventNight, getChefRecommendations, events } from "@/data/menuData";
 import MenuCard from "@/components/MenuCard";
 
 const categories = [

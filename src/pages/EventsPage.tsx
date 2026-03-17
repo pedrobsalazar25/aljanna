@@ -1,7 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Calendar } from "lucide-react";
-import { events } from "@/data/menuData";
-import eventNight from "@/assets/event-night.jpg";
+import { events, eventNight } from "@/data/menuData";
 
 const EventsPage = () => {
   const navigate = useNavigate();
