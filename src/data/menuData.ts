@@ -264,7 +264,7 @@ export const menuItems: MenuItem[] = [
     name: "Cerveza Solera",
     description: "Cerveza venezolana con cuerpo y carácter",
     price: 4.99,
-    image: soleraPlaceholder,
+    image: cervezaSoleraImg,
     category: "bebidas",
     pairsWellWith: ["kofte", "meze"],
   },
