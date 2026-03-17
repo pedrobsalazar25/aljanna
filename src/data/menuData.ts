@@ -190,7 +190,7 @@ export const menuItems: MenuItem[] = [
     name: "Köfte",
     description: "Albóndigas de cordero a la parrilla con hierbas",
     price: 12.49,
-    image: koftePlaceholder,
+    image: kofteImg,
     category: "cocina",
     pairsWellWith: ["cerveza-polar"],
   },
