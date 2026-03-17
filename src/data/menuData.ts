@@ -96,7 +96,7 @@ export const menuItems: MenuItem[] = [
     name: "Halva",
     description: "Pasta cremosa de sésamo con adorno de pistacho",
     price: 7.49,
-    image: halvaPlaceholder,
+    image: halvaImg,
     category: "postres",
     pairsWellWith: ["cerveza-macuto"],
   },
