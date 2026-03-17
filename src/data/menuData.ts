@@ -257,7 +257,7 @@ export const menuItems: MenuItem[] = [
     name: "Regional",
     description: "Cerveza venezolana de sabor suave y equilibrado",
     price: 4.49,
-    image: regionalPlaceholder,
+    image: regionalImg,
     category: "bebidas",
     pairsWellWith: ["shish-kebab", "borek"],
   },
