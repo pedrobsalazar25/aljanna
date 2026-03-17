@@ -174,7 +174,7 @@ export const menuItems: MenuItem[] = [
     name: "Shish Kebab",
     description: "Brochetas de carne y verduras a la parrilla",
     price: 14.99,
-    image: shishKebabPlaceholder,
+    image: shishKebabImg,
     category: "cocina",
     pairsWellWith: ["cerveza-macuto", "cerveza-polar"],
   },
