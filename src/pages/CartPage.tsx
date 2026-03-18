@@ -45,19 +45,19 @@ const CartPage = () => {
   }
 
   return (
-    <div className="pb-20 min-h-screen">
+    <div className="pb-20 min-h-screen bg-white">
       {/* Header */}
-      <div className="sticky top-0 z-30 glass-dark px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate(-1)} className="text-cream/80 hover:text-gold transition-colors">
+      <div className="sticky top-0 z-30 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
+        <button onClick={() => navigate(-1)} className="text-foreground/60 hover:text-accent transition-colors">
           <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
         </button>
-        <h1 className="font-heading text-lg font-bold text-cream">Tu Pedido</h1>
+        <h1 className="font-heading text-lg font-bold text-foreground">Tu Pedido</h1>
       </div>
 
       {/* Items */}
       <div className="px-4 mt-4 space-y-3">
         {items.map((ci) => (
-          <div key={ci.item.id} className="glass-gold rounded-xl p-3 flex gap-3 animate-fade-up">
+          <div key={ci.item.id} className="bg-secondary/50 border border-border rounded-xl p-3 flex gap-3 animate-fade-up">
             <img
               src={ci.item.image}
               alt={ci.item.name}
@@ -94,7 +94,7 @@ const CartPage = () => {
 
       {/* Customer Info & Checkout */}
       <div className="px-4 mt-6 space-y-4">
-        <div className="glass-gold rounded-xl p-4 space-y-3">
+        <div className="bg-secondary/50 border border-border rounded-xl p-4 space-y-3">
           <div>
             <label className="text-xs text-muted-foreground font-body block mb-1">Tu Nombre</label>
             <input
@@ -102,7 +102,7 @@ const CartPage = () => {
               value={customerName}
               onChange={(e) => setCustomerName(e.target.value)}
               placeholder="Nombre completo"
-              className="w-full bg-transparent border border-gold/20 rounded-lg px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold transition-colors"
+              className="w-full bg-white border border-border rounded-lg px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
             />
           </div>
           <div>
@@ -114,8 +114,8 @@ const CartPage = () => {
                   onClick={() => setPaymentMethod(method)}
                   className={`flex-1 py-2 rounded-lg text-sm font-body transition-all border ${
                     paymentMethod === method
-                      ? "border-gold bg-gold/10 text-gold font-bold"
-                      : "border-gold/20 text-muted-foreground hover:border-gold/40"
+                      ? "border-accent bg-accent/10 text-accent font-bold"
+                      : "border-border text-muted-foreground hover:border-accent/40"
                   }`}
                 >
                   {method}
@@ -126,10 +126,10 @@ const CartPage = () => {
         </div>
 
         {/* Total & Checkout */}
-        <div className="glass-gold rounded-xl p-4">
+        <div className="bg-secondary/50 border border-border rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
             <span className="font-body text-sm text-muted-foreground">Total</span>
-            <span className="font-heading text-2xl font-bold text-gold">${totalPrice.toFixed(2)}</span>
+            <span className="font-heading text-2xl font-bold text-accent">${totalPrice.toFixed(2)}</span>
           </div>
           <button
             onClick={handleCheckout}
