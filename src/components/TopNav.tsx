@@ -71,8 +71,7 @@ const TopNav = () => {
           <SheetContent side="left" className="bg-primary/95 backdrop-blur-xl border-gold/20 w-72 p-0">
             <SheetHeader className="p-5 pb-2">
               <SheetTitle className="flex items-center gap-3">
-                <img src={logo} alt="Al Janna" className="w-10 h-10 object-contain" />
-                <span className="gold-text-gradient font-heading text-lg">Al Janna Sweet</span>
+                <img src={logo} alt="Al Janna Sweet" className="h-10 object-contain" />
               </SheetTitle>
             </SheetHeader>
 
