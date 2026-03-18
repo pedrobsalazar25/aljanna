@@ -349,6 +349,7 @@ export const getPairsWellWith = (item: MenuItem) =>
     .map((id) => getItemById(id))
     .filter(Boolean) as MenuItem[];
 
+
 export interface EventItem {
   id: string;
   title: string;
