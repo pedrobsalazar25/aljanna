@@ -48,10 +48,10 @@ const CartPage = () => {
     <div className="pb-20 min-h-screen bg-white">
       {/* Header */}
       <div className="sticky top-0 z-30 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate(-1)} className="text-cream/80 hover:text-gold transition-colors">
+        <button onClick={() => navigate(-1)} className="text-foreground/60 hover:text-accent transition-colors">
           <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
         </button>
-        <h1 className="font-heading text-lg font-bold text-cream">Tu Pedido</h1>
+        <h1 className="font-heading text-lg font-bold text-foreground">Tu Pedido</h1>
       </div>
 
       {/* Items */}
