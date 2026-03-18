@@ -94,7 +94,7 @@ const CartPage = () => {
 
       {/* Customer Info & Checkout */}
       <div className="px-4 mt-6 space-y-4">
-        <div className="glass-gold rounded-xl p-4 space-y-3">
+        <div className="bg-secondary/50 border border-border rounded-xl p-4 space-y-3">
           <div>
             <label className="text-xs text-muted-foreground font-body block mb-1">Tu Nombre</label>
             <input
