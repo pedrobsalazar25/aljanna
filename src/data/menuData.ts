@@ -349,6 +349,9 @@ export const getPairsWellWith = (item: MenuItem) =>
     .map((id) => getItemById(id))
     .filter(Boolean) as MenuItem[];
 
+export const getItemsByCategory = (category: Category) =>
+  menuItems.filter((item) => item.category === category);
+
 export interface EventItem {
   id: string;
   title: string;
