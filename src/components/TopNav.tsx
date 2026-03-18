@@ -24,11 +24,11 @@ import {
 
 const menuLinks = [
   { path: "/", icon: Home, label: "Inicio" },
+  { path: "/eventos", icon: CalendarDays, label: "Eventos y Promociones" },
   { path: "/cocina", icon: UtensilsCrossed, label: "Cocina" },
   { path: "/postres", icon: Cake, label: "Postres" },
   { path: "/bebidas", icon: Wine, label: "Bebidas" },
   { path: "/carrito", icon: ShoppingCart, label: "Carrito" },
-  { path: "/eventos", icon: CalendarDays, label: "Eventos" },
 ];
 
 const socialLinks = [
