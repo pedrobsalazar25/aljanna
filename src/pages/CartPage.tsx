@@ -126,10 +126,10 @@ const CartPage = () => {
         </div>
 
         {/* Total & Checkout */}
-        <div className="glass-gold rounded-xl p-4">
+        <div className="bg-secondary/50 border border-border rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
             <span className="font-body text-sm text-muted-foreground">Total</span>
-            <span className="font-heading text-2xl font-bold text-gold">${totalPrice.toFixed(2)}</span>
+            <span className="font-heading text-2xl font-bold text-accent">${totalPrice.toFixed(2)}</span>
           </div>
           <button
             onClick={handleCheckout}

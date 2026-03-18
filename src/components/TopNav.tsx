@@ -140,11 +140,8 @@ const TopNav = () => {
         </Sheet>
 
         {/* Logo */}
-        <button onClick={() => navigate("/")} className="flex items-center gap-2">
-          <img src={logo} alt="Al Janna" className="w-8 h-8 object-contain" />
-          <span className="gold-text-gradient font-heading text-sm font-semibold hidden min-[380px]:inline">
-            Al Janna
-          </span>
+        <button onClick={() => navigate("/")} className="flex items-center">
+          <img src={logo} alt="Al Janna" className="w-10 h-10 object-contain" />
         </button>
 
         {/* Search toggle */}
