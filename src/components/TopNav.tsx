@@ -140,7 +140,7 @@ const TopNav = () => {
 
         {/* Logo */}
         <button onClick={() => navigate("/")} className="flex items-center">
-          <img src={logo} alt="Al Janna" className="w-10 h-10 object-contain" />
+          <img src={logo} alt="Al Janna" className="h-10 object-contain" />
         </button>
 
         {/* Search toggle */}
