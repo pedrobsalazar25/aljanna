@@ -165,7 +165,7 @@ const ProductPage = () => {
             {pairs.map((p) => (
               <div
                 key={p.id}
-                className="min-w-[160px] flex-shrink-0 snap-start transition-transform hover:scale-[1.02] hover:z-10"
+                className="min-w-[calc(50%-6px)] w-[calc(50%-6px)] flex-shrink-0 snap-start transition-transform hover:scale-[1.02] hover:z-10"
               >
                 <MenuCard item={p} />
               </div>
