@@ -102,7 +102,7 @@ const CartPage = () => {
               value={customerName}
               onChange={(e) => setCustomerName(e.target.value)}
               placeholder="Nombre completo"
-              className="w-full bg-transparent border border-gold/20 rounded-lg px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-gold transition-colors"
+              className="w-full bg-white border border-border rounded-lg px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
             />
           </div>
           <div>
