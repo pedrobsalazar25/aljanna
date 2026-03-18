@@ -45,9 +45,9 @@ const CartPage = () => {
   }
 
   return (
-    <div className="pb-20 min-h-screen">
+    <div className="pb-20 min-h-screen bg-white">
       {/* Header */}
-      <div className="sticky top-0 z-30 glass-dark px-4 py-3 flex items-center gap-3">
+      <div className="sticky top-0 z-30 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
         <button onClick={() => navigate(-1)} className="text-cream/80 hover:text-gold transition-colors">
           <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
         </button>
