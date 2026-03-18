@@ -114,8 +114,8 @@ const CartPage = () => {
                   onClick={() => setPaymentMethod(method)}
                   className={`flex-1 py-2 rounded-lg text-sm font-body transition-all border ${
                     paymentMethod === method
-                      ? "border-gold bg-gold/10 text-gold font-bold"
-                      : "border-gold/20 text-muted-foreground hover:border-gold/40"
+                      ? "border-accent bg-accent/10 text-accent font-bold"
+                      : "border-border text-muted-foreground hover:border-accent/40"
                   }`}
                 >
                   {method}
