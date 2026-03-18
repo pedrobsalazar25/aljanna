@@ -57,7 +57,7 @@ const CartPage = () => {
       {/* Items */}
       <div className="px-4 mt-4 space-y-3">
         {items.map((ci) => (
-          <div key={ci.item.id} className="glass-gold rounded-xl p-3 flex gap-3 animate-fade-up">
+          <div key={ci.item.id} className="bg-secondary/50 border border-border rounded-xl p-3 flex gap-3 animate-fade-up">
             <img
               src={ci.item.image}
               alt={ci.item.name}
