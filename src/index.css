@@ -6,8 +6,8 @@
 
 @layer base {
   :root {
-    --background: 50 33% 96%;
-    --foreground: 0 0% 5%;
+    --background: 0 0% 0%;
+    --foreground: 43 30% 90%;
 
     --card: 0 0% 100%;
     --card-foreground: 0 0% 5%;
@@ -99,10 +99,11 @@
   }
 
   .glass-gold {
-    background: hsla(43 56% 52% / 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid hsla(43 56% 52% / 0.2);
+    background: hsla(43 56% 52% / 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsla(43 56% 52% / 0.3);
+    box-shadow: 0 8px 32px 0 hsla(43 56% 52% / 0.08);
   }
 
   .text-gold {
