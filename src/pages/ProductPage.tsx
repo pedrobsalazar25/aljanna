@@ -160,7 +160,7 @@ const ProductPage = () => {
       {/* Pairs Well With - Carousel with pause on hover */}
       {pairs.length > 0 && (
         <section className="px-4 mt-8">
-          <h2 className="font-heading text-lg font-bold text-foreground mb-3">Combina Bien Con</h2>
+          <h2 className="font-body text-lg font-bold text-primary mb-3">Combina Bien Con</h2>
           <div
             ref={carouselRef}
             className="flex gap-3 overflow-x-auto no-scrollbar pb-2 snap-x snap-mandatory"
