@@ -13,7 +13,7 @@ const MenuCard = ({ item }: MenuCardProps) => {
 
   return (
     <div
-      className="glass-dark rounded-xl overflow-hidden cursor-pointer group animate-fade-up"
+      className="glass-dark border-gold/20 rounded-xl overflow-hidden cursor-pointer group animate-fade-up"
       onClick={() => navigate(`/plato/${item.id}`)}
     >
       <div className="relative aspect-square overflow-hidden">
