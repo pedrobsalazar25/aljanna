@@ -86,7 +86,7 @@ const ProductPage = () => {
         <div className="relative mt-4">
           <button
             onClick={() => setShareOpen(!shareOpen)}
-            className="flex items-center gap-2 text-primary font-body text-sm font-semibold hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 text-primary/80 font-body text-sm font-semibold hover:opacity-60 transition-opacity"
           >
             📤 Recomiéndalo a un amigo
           </button>
