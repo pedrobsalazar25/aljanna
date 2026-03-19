@@ -54,14 +54,15 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="pb-20 min-h-screen">
+    <div className="pb-20 min-h-screen bg-cream">
       {/* Hero Image */}
-      <div className="relative h-[54vh] min-h-[384px]">
-        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/30" />
+      <div className="relative h-[54vh] min-h-[384px] bg-cream">
+        <div className="px-4 pt-4 pb-2">
+          <img src={item.image} alt={item.name} className="w-full h-full object-cover rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.45)]" />
+        </div>
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-4 left-4 w-10 h-10 rounded-full glass flex items-center justify-center"
+          className="absolute top-6 left-6 w-10 h-10 rounded-full glass flex items-center justify-center"
         >
           <ArrowLeft className="w-5 h-5 text-cream" strokeWidth={1.5} />
         </button>
@@ -69,7 +70,7 @@ const ProductPage = () => {
 
       {/* Title below hero */}
       <div className="px-5 mt-3">
-        <h1 className="font-body text-2xl md:text-3xl font-bold text-foreground">{item.name}</h1>
+        <h1 className="font-body text-2xl md:text-3xl font-bold text-primary">{item.name}</h1>
         {item.isChefRecommendation && (
           <span className="inline-block mt-1 bg-accent text-primary text-[10px] font-bold px-2 py-0.5 rounded-full font-body">
             ⭐ Recomendación del Chef
