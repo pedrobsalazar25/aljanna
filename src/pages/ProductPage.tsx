@@ -80,7 +80,7 @@ const ProductPage = () => {
 
       {/* Description */}
       <section className="px-5 mt-4">
-        <p className="text-foreground/80 font-body text-sm leading-relaxed">{item.description}</p>
+        <p className="text-primary/80 font-body text-sm leading-relaxed">{item.description}</p>
 
         {/* Share */}
         <div className="relative mt-4">
