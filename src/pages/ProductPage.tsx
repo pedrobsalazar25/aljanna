@@ -54,14 +54,15 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="pb-20 min-h-screen">
+    <div className="pb-20 min-h-screen bg-cream">
       {/* Hero Image */}
-      <div className="relative h-[54vh] min-h-[384px]">
-        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/30" />
+      <div className="relative h-[54vh] min-h-[384px] bg-cream">
+        <div className="px-4 pt-4 pb-2">
+          <img src={item.image} alt={item.name} className="w-full h-full object-cover rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.45)]" />
+        </div>
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-4 left-4 w-10 h-10 rounded-full glass flex items-center justify-center"
+          className="absolute top-6 left-6 w-10 h-10 rounded-full glass flex items-center justify-center"
         >
           <ArrowLeft className="w-5 h-5 text-cream" strokeWidth={1.5} />
         </button>
@@ -69,7 +70,7 @@ const ProductPage = () => {
 
       {/* Title below hero */}
       <div className="px-5 mt-3">
-        <h1 className="font-body text-2xl md:text-3xl font-bold text-foreground">{item.name}</h1>
+        <h1 className="font-body text-2xl md:text-3xl font-bold text-primary">{item.name}</h1>
         {item.isChefRecommendation && (
           <span className="inline-block mt-1 bg-accent text-primary text-[10px] font-bold px-2 py-0.5 rounded-full font-body">
             ⭐ Recomendación del Chef
@@ -79,13 +80,13 @@ const ProductPage = () => {
 
       {/* Description */}
       <section className="px-5 mt-4">
-        <p className="text-foreground/80 font-body text-sm leading-relaxed">{item.description}</p>
+        <p className="text-primary/80 font-body text-sm leading-relaxed">{item.description}</p>
 
         {/* Share */}
         <div className="relative mt-4">
           <button
             onClick={() => setShareOpen(!shareOpen)}
-            className="flex items-center gap-2 text-primary font-body text-sm font-semibold hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 text-primary/80 font-body text-sm font-semibold hover:opacity-60 transition-opacity"
           >
             📤 Recomiéndalo a un amigo
           </button>
@@ -125,23 +126,23 @@ const ProductPage = () => {
 
       {/* Action Block */}
       <section className="px-5 mt-6">
-        <div className="glass-dark border border-gold/20 rounded-xl p-4 flex items-center justify-between">
+        <div className="bg-primary/5 border border-accent/20 rounded-xl p-4 flex items-center justify-between">
           <div>
-            <p className="text-xs text-muted-foreground font-body">Precio</p>
-            <p className="text-accent font-heading text-2xl font-bold">${item.price.toFixed(2)}</p>
+            <p className="text-xs text-primary/60 font-body">Precio</p>
+            <p className="text-accent font-body text-2xl font-bold">${item.price.toFixed(2)}</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 border border-accent/30 rounded-full px-2 py-1">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-accent hover:bg-accent/10 transition-colors"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-primary hover:bg-primary/10 transition-colors"
               >
                 <Minus className="w-3.5 h-3.5" strokeWidth={1.5} />
               </button>
-              <span className="text-sm font-body font-bold w-6 text-center">{quantity}</span>
+              <span className="text-sm font-body font-bold w-6 text-center text-primary">{quantity}</span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-accent hover:bg-accent/10 transition-colors"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-primary hover:bg-primary/10 transition-colors"
               >
                 <Plus className="w-3.5 h-3.5" strokeWidth={1.5} />
               </button>
@@ -159,7 +160,7 @@ const ProductPage = () => {
       {/* Pairs Well With - Carousel with pause on hover */}
       {pairs.length > 0 && (
         <section className="px-4 mt-8">
-          <h2 className="font-heading text-lg font-bold text-foreground mb-3">Combina Bien Con</h2>
+          <h2 className="font-body text-lg font-bold text-primary mb-3">Combina Bien Con</h2>
           <div
             ref={carouselRef}
             className="flex gap-3 overflow-x-auto no-scrollbar pb-2 snap-x snap-mandatory"
@@ -179,7 +180,7 @@ const ProductPage = () => {
       {/* More from this category */}
       {morFromCategory.length > 0 && (
         <section className="px-4 mt-8 mb-4">
-          <h2 className="font-heading text-lg font-bold text-foreground mb-3">
+          <h2 className="font-body text-lg font-bold text-primary mb-3">
             Más de {categoryLabels[item.category]}
           </h2>
           <div className="grid grid-cols-2 gap-3">
