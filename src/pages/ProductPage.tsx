@@ -125,7 +125,7 @@ const ProductPage = () => {
 
       {/* Action Block */}
       <section className="px-5 mt-6">
-        <div className="glass-gold rounded-xl p-4 flex items-center justify-between">
+        <div className="glass-dark border border-gold/20 rounded-xl p-4 flex items-center justify-between">
           <div>
             <p className="text-xs text-muted-foreground font-body">Precio</p>
             <p className="text-accent font-heading text-2xl font-bold">${item.price.toFixed(2)}</p>
