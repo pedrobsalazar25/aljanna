@@ -135,14 +135,14 @@ const ProductPage = () => {
             <div className="flex items-center gap-2 border border-accent/30 rounded-full px-2 py-1">
               <button
                 onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-accent hover:bg-accent/10 transition-colors"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-primary hover:bg-primary/10 transition-colors"
               >
                 <Minus className="w-3.5 h-3.5" strokeWidth={1.5} />
               </button>
-              <span className="text-sm font-body font-bold w-6 text-center">{quantity}</span>
+              <span className="text-sm font-body font-bold w-6 text-center text-primary">{quantity}</span>
               <button
                 onClick={() => setQuantity(quantity + 1)}
-                className="w-7 h-7 rounded-full flex items-center justify-center text-accent hover:bg-accent/10 transition-colors"
+                className="w-7 h-7 rounded-full flex items-center justify-center text-primary hover:bg-primary/10 transition-colors"
               >
                 <Plus className="w-3.5 h-3.5" strokeWidth={1.5} />
               </button>
