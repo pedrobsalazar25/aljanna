@@ -180,7 +180,7 @@ const ProductPage = () => {
       {/* More from this category */}
       {morFromCategory.length > 0 && (
         <section className="px-4 mt-8 mb-4">
-          <h2 className="font-heading text-lg font-bold text-foreground mb-3">
+          <h2 className="font-body text-lg font-bold text-primary mb-3">
             Más de {categoryLabels[item.category]}
           </h2>
           <div className="grid grid-cols-2 gap-3">
