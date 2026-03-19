@@ -56,7 +56,7 @@ const ProductPage = () => {
   return (
     <div className="pb-20 min-h-screen">
       {/* Hero Image */}
-      <div className="relative h-[45vh] min-h-[320px]">
+      <div className="relative h-[54vh] min-h-[384px]">
         <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/30" />
         <button
@@ -65,14 +65,16 @@ const ProductPage = () => {
         >
           <ArrowLeft className="w-5 h-5 text-cream" strokeWidth={1.5} />
         </button>
-        <div className="absolute bottom-4 left-4 right-4">
-          <h1 className="font-heading text-2xl md:text-3xl font-bold text-cream drop-shadow-lg">{item.name}</h1>
-          {item.isChefRecommendation && (
-            <span className="inline-block mt-1 bg-accent text-primary text-[10px] font-bold px-2 py-0.5 rounded-full font-body">
-              ⭐ Recomendación del Chef
-            </span>
-          )}
-        </div>
+      </div>
+
+      {/* Title below hero */}
+      <div className="px-5 mt-3">
+        <h1 className="font-body text-2xl md:text-3xl font-bold text-foreground">{item.name}</h1>
+        {item.isChefRecommendation && (
+          <span className="inline-block mt-1 bg-accent text-primary text-[10px] font-bold px-2 py-0.5 rounded-full font-body">
+            ⭐ Recomendación del Chef
+          </span>
+        )}
       </div>
 
       {/* Description */}
