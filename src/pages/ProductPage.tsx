@@ -128,8 +128,8 @@ const ProductPage = () => {
       <section className="px-5 mt-6">
         <div className="glass-dark border border-gold/20 rounded-xl p-4 flex items-center justify-between">
           <div>
-            <p className="text-xs text-muted-foreground font-body">Precio</p>
-            <p className="text-accent font-heading text-2xl font-bold">${item.price.toFixed(2)}</p>
+            <p className="text-xs text-primary/60 font-body">Precio</p>
+            <p className="text-accent font-body text-2xl font-bold">${item.price.toFixed(2)}</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 border border-accent/30 rounded-full px-2 py-1">
