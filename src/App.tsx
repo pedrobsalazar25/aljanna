@@ -7,6 +7,7 @@ import { CartProvider } from "@/context/CartContext";
 import BottomNav from "@/components/BottomNav";
 import TopNav from "@/components/TopNav";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
+import ScrollToTop from "@/components/ScrollToTop";
 import HomePage from "@/pages/HomePage";
 import MenuCategoryPage from "@/pages/MenuCategoryPage";
 import ProductPage from "@/pages/ProductPage";
@@ -24,6 +25,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <div className="max-w-lg mx-auto relative min-h-screen animated-gradient-bg">
+            <ScrollToTop />
             <TopNav />
             <div className="pt-14">
               <Routes>

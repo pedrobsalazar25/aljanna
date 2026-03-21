@@ -30,10 +30,10 @@ const CartPage = () => {
 
   if (items.length === 0) {
     return (
-      <div className="pb-20 min-h-screen flex flex-col items-center justify-center px-6 text-center">
+      <div className="pb-20 min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white">
         <ShoppingCart className="w-16 h-16 text-gold/30 mb-4" strokeWidth={1} />
-        <h2 className="font-body text-xl font-bold text-foreground">Tu carrito está vacío</h2>
-        <p className="text-muted-foreground text-sm font-body mt-2">Explora nuestro menú y agrega tus platos favoritos</p>
+        <h2 className="font-body text-xl font-bold text-black">Tu carrito está vacío</h2>
+        <p className="text-black/60 text-sm font-body mt-2">Explora nuestro menú y agrega tus platos favoritos</p>
         <button
           onClick={() => navigate("/cocina")}
           className="mt-6 gold-gradient text-primary font-body font-bold text-sm px-6 py-2.5 rounded-full"
@@ -48,10 +48,10 @@ const CartPage = () => {
     <div className="pb-20 min-h-screen bg-white">
       {/* Header */}
       <div className="sticky top-0 z-30 bg-white shadow-sm px-4 py-3 flex items-center gap-3">
-        <button onClick={() => navigate(-1)} className="text-foreground/60 hover:text-accent transition-colors">
+        <button onClick={() => navigate(-1)} className="text-black/60 hover:text-accent transition-colors">
           <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
         </button>
-        <h1 className="font-body text-lg font-bold text-foreground">Tu Pedido</h1>
+        <h1 className="font-body text-lg font-bold text-black">Tu Pedido</h1>
       </div>
 
       {/* Items */}
@@ -64,7 +64,7 @@ const CartPage = () => {
               className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
             />
             <div className="flex-1 min-w-0">
-              <h3 className="font-body text-sm font-semibold truncate">{ci.item.name}</h3>
+              <h3 className="font-body text-sm font-semibold text-black truncate">{ci.item.name}</h3>
               <p className="text-gold font-body font-bold mt-1">${(ci.item.price * ci.quantity).toFixed(2)}</p>
               <div className="flex items-center gap-2 mt-2">
                 <button
@@ -73,7 +73,7 @@ const CartPage = () => {
                 >
                   <Minus className="w-3 h-3" strokeWidth={1.5} />
                 </button>
-                <span className="text-sm font-body font-bold w-4 text-center">{ci.quantity}</span>
+                <span className="text-sm font-body font-bold w-4 text-center text-black">{ci.quantity}</span>
                 <button
                   onClick={() => updateQuantity(ci.item.id, ci.quantity + 1)}
                   className="w-6 h-6 rounded-full border border-gold/30 flex items-center justify-center text-gold"
@@ -96,17 +96,17 @@ const CartPage = () => {
       <div className="px-4 mt-6 space-y-4">
         <div className="bg-secondary/50 border border-border rounded-xl p-4 space-y-3">
           <div>
-            <label className="text-xs text-muted-foreground font-body block mb-1">Tu Nombre</label>
+            <label className="text-xs text-black/60 font-body block mb-1">Tu Nombre</label>
             <input
               type="text"
               value={customerName}
               onChange={(e) => setCustomerName(e.target.value)}
               placeholder="Nombre completo"
-              className="w-full bg-white border border-border rounded-lg px-3 py-2 text-sm font-body text-foreground placeholder:text-muted-foreground/50 focus:outline-none focus:border-accent transition-colors"
+              className="w-full bg-white border border-border rounded-lg px-3 py-2 text-sm font-body text-black placeholder:text-black/40 focus:outline-none focus:border-accent transition-colors"
             />
           </div>
           <div>
-            <label className="text-xs text-muted-foreground font-body block mb-1">Método de Pago</label>
+            <label className="text-xs text-black/60 font-body block mb-1">Método de Pago</label>
             <div className="flex gap-2">
               {(["Efectivo", "Transferencia"] as PaymentMethod[]).map((method) => (
                 <button
@@ -115,7 +115,7 @@ const CartPage = () => {
                   className={`flex-1 py-2 rounded-lg text-sm font-body transition-all border ${
                     paymentMethod === method
                       ? "border-accent bg-accent/10 text-accent font-bold"
-                      : "border-border text-muted-foreground hover:border-accent/40"
+                      : "border-border text-black/60 hover:border-accent/40"
                   }`}
                 >
                   {method}
@@ -128,7 +128,7 @@ const CartPage = () => {
         {/* Total & Checkout */}
         <div className="bg-secondary/50 border border-border rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
-            <span className="font-body text-sm text-muted-foreground">Total</span>
+            <span className="font-body text-sm text-black/60">Total</span>
             <span className="font-body text-2xl font-bold text-accent">${totalPrice.toFixed(2)}</span>
           </div>
           <button
