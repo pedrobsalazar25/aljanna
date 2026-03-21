@@ -73,7 +73,7 @@ const CartPage = () => {
                 >
                   <Minus className="w-3 h-3" strokeWidth={1.5} />
                 </button>
-                <span className="text-sm font-body font-bold w-4 text-center">{ci.quantity}</span>
+                <span className="text-sm font-body font-bold w-4 text-center text-black">{ci.quantity}</span>
                 <button
                   onClick={() => updateQuantity(ci.item.id, ci.quantity + 1)}
                   className="w-6 h-6 rounded-full border border-gold/30 flex items-center justify-center text-gold"
