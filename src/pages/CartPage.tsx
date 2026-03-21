@@ -11,6 +11,7 @@ type PaymentMethod = "Efectivo" | "Transferencia";
 const CartPage = () => {
   const navigate = useNavigate();
   const { items, updateQuantity, removeItem, clearCart, totalPrice } = useCart();
+  const { formatCurrency, currency } = useCurrency();
   const [customerName, setCustomerName] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("Efectivo");
 
