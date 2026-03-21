@@ -13,7 +13,6 @@ const ProductPage = () => {
   const { addItem } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [shareOpen, setShareOpen] = useState(false);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   const item = getItemById(id || "");
   if (!item) {
