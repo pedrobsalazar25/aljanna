@@ -1,6 +1,8 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, ChevronRight } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState } from "react";
+import Autoplay from "embla-carousel-autoplay";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { getItemById, getPairsWellWith, getItemsByCategory } from "@/data/menuData";
 import { useCart } from "@/context/CartContext";
 import MenuCard from "@/components/MenuCard";
@@ -11,7 +13,6 @@ const ProductPage = () => {
   const { addItem } = useCart();
   const [quantity, setQuantity] = useState(1);
   const [shareOpen, setShareOpen] = useState(false);
-  const carouselRef = useRef<HTMLDivElement>(null);
 
   const item = getItemById(id || "");
   if (!item) {
@@ -161,19 +162,19 @@ const ProductPage = () => {
       {pairs.length > 0 && (
         <section className="px-4 mt-8">
           <h2 className="font-body text-lg font-bold text-primary mb-3">Combina Bien Con</h2>
-          <div
-            ref={carouselRef}
-            className="flex gap-3 overflow-x-auto no-scrollbar pb-2 snap-x snap-mandatory"
+          <Carousel
+            opts={{ align: "start", loop: true }}
+            plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+            className="w-full"
           >
-            {pairs.map((p) => (
-              <div
-                key={p.id}
-                className="min-w-[calc(50%-6px)] w-[calc(50%-6px)] flex-shrink-0 snap-start transition-transform hover:scale-[1.02] hover:z-10"
-              >
-                <MenuCard item={p} />
-              </div>
-            ))}
-          </div>
+            <CarouselContent className="-ml-3">
+              {pairs.map((p) => (
+                <CarouselItem key={p.id} className="pl-3 basis-1/2">
+                  <MenuCard item={p} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
         </section>
       )}
 

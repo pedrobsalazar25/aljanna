@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { UtensilsCrossed, Cake, Wine, MapPin, Clock, Phone, Mail } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import logo from "@/assets/logo.png";
 import { heroBg, eventNight, getChefRecommendations, events } from "@/data/menuData";
 import MenuCard from "@/components/MenuCard";
@@ -60,7 +62,7 @@ const HomePage = () => {
       {/* Chef's Recommendations */}
       <section className="px-4 mt-10">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-heading text-xl font-bold text-foreground">Recomendación del Chef</h2>
+          <h2 className="font-body text-xl font-bold text-foreground">Recomendación del Chef</h2>
           <span className="text-gold text-xs font-body">⭐ Selección especial</span>
         </div>
         <div className="grid grid-cols-2 gap-3">
@@ -73,36 +75,41 @@ const HomePage = () => {
       {/* Events Carousel */}
       <section className="px-4 mt-10">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-heading text-xl font-bold text-foreground">Eventos y Promociones</h2>
+          <h2 className="font-body text-xl font-bold text-foreground">Eventos y Promociones</h2>
           <button onClick={() => navigate("/eventos")} className="text-gold text-xs font-body hover:underline">
             Ver Todos →
           </button>
         </div>
-        <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
-          {events.map((event) => (
-            <div
-              key={event.id}
-              className="glass-gold rounded-xl min-w-[280px] overflow-hidden flex-shrink-0"
-            >
-              <div className="relative h-36">
-                <img src={eventNight} alt={event.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <span className="absolute bottom-2 left-3 text-cream text-[10px] font-body bg-gold/80 px-2 py-0.5 rounded-full">
-                  {event.date}
-                </span>
-              </div>
-              <div className="p-3">
-                <h3 className="font-heading text-sm font-semibold">{event.title}</h3>
-                <p className="text-muted-foreground text-xs mt-1 line-clamp-2 font-body">{event.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-3">
+            {events.map((event) => (
+              <CarouselItem key={event.id} className="pl-3 basis-[280px]">
+                <div className="glass-gold rounded-xl overflow-hidden">
+                  <div className="relative h-36">
+                    <img src={eventNight} alt={event.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <span className="absolute bottom-2 left-3 text-cream text-[10px] font-body bg-gold/80 px-2 py-0.5 rounded-full">
+                      {event.date}
+                    </span>
+                  </div>
+                  <div className="p-3">
+                    <h3 className="font-body text-sm font-semibold">{event.title}</h3>
+                    <p className="text-muted-foreground text-xs mt-1 line-clamp-2 font-body">{event.description}</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </section>
 
       {/* Info Block */}
       <section id="contact-section" className="px-4 mt-10 mb-6">
-        <h2 className="font-heading text-xl font-bold text-foreground mb-4">Encuéntranos</h2>
+        <h2 className="font-body text-xl font-bold text-foreground mb-4">Encuéntranos</h2>
         <div className="glass-gold rounded-xl p-5 space-y-4">
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />

@@ -71,7 +71,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
   }
 }
 
@@ -144,12 +144,12 @@
   .animated-gradient-bg {
     background: linear-gradient(
       -45deg,
-      hsl(0 0% 3%),
-      hsl(43 56% 30%),
-      hsl(50 33% 90%),
+      hsl(43 56% 20%),
+      hsl(43 56% 35%),
+      hsl(43 60% 52%),
       hsl(43 50% 40%),
-      hsl(0 0% 8%),
-      hsl(50 33% 96%)
+      hsl(43 56% 28%),
+      hsl(43 60% 45%)
     );
     background-size: 400% 400%;
     animation: gradientShift 18s ease infinite;

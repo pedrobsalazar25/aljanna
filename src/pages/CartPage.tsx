@@ -32,7 +32,7 @@ const CartPage = () => {
     return (
       <div className="pb-20 min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <ShoppingCart className="w-16 h-16 text-gold/30 mb-4" strokeWidth={1} />
-        <h2 className="font-heading text-xl font-bold text-foreground">Tu carrito está vacío</h2>
+        <h2 className="font-body text-xl font-bold text-foreground">Tu carrito está vacío</h2>
         <p className="text-muted-foreground text-sm font-body mt-2">Explora nuestro menú y agrega tus platos favoritos</p>
         <button
           onClick={() => navigate("/cocina")}
@@ -51,7 +51,7 @@ const CartPage = () => {
         <button onClick={() => navigate(-1)} className="text-foreground/60 hover:text-accent transition-colors">
           <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
         </button>
-        <h1 className="font-heading text-lg font-bold text-foreground">Tu Pedido</h1>
+        <h1 className="font-body text-lg font-bold text-foreground">Tu Pedido</h1>
       </div>
 
       {/* Items */}
@@ -64,8 +64,8 @@ const CartPage = () => {
               className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
             />
             <div className="flex-1 min-w-0">
-              <h3 className="font-heading text-sm font-semibold truncate">{ci.item.name}</h3>
-              <p className="text-gold font-heading font-bold mt-1">${(ci.item.price * ci.quantity).toFixed(2)}</p>
+              <h3 className="font-body text-sm font-semibold truncate">{ci.item.name}</h3>
+              <p className="text-gold font-body font-bold mt-1">${(ci.item.price * ci.quantity).toFixed(2)}</p>
               <div className="flex items-center gap-2 mt-2">
                 <button
                   onClick={() => updateQuantity(ci.item.id, ci.quantity - 1)}
@@ -129,7 +129,7 @@ const CartPage = () => {
         <div className="bg-secondary/50 border border-border rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
             <span className="font-body text-sm text-muted-foreground">Total</span>
-            <span className="font-heading text-2xl font-bold text-accent">${totalPrice.toFixed(2)}</span>
+            <span className="font-body text-2xl font-bold text-accent">${totalPrice.toFixed(2)}</span>
           </div>
           <button
             onClick={handleCheckout}

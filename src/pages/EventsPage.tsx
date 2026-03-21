@@ -11,7 +11,7 @@ const EventsPage = () => {
         <button onClick={() => navigate(-1)} className="text-cream/80 hover:text-gold transition-colors">
           <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
         </button>
-        <h1 className="font-heading text-lg font-bold text-cream">Eventos y Promociones</h1>
+        <h1 className="font-body text-lg font-bold text-cream">Eventos y Promociones</h1>
       </div>
 
       {/* Hero events */}
@@ -26,7 +26,7 @@ const EventsPage = () => {
                   <Calendar className="w-3.5 h-3.5 text-gold" strokeWidth={1.5} />
                   <span className="text-gold text-[11px] font-body">{event.date}</span>
                 </div>
-                <h3 className="font-heading text-lg font-bold text-cream">{event.title}</h3>
+                <h3 className="font-body text-lg font-bold text-cream">{event.title}</h3>
               </div>
             </div>
             <div className="p-4">

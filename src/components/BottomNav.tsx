@@ -16,7 +16,7 @@ const BottomNav = () => {
   const { totalItems } = useCart();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-50 glass-dark border-t border-gold/20 safe-area-bottom">
+    <nav className="fixed bottom-0 left-0 right-0 z-50 glass-dark border-t border-gold/20 safe-area-bottom opacity-70 hover:opacity-100 transition-opacity duration-300">
       <div className="flex justify-around items-center h-16 max-w-lg mx-auto px-2">
         {navItems.map(({ path, icon: Icon, label }) => {
           const isActive = location.pathname === path;
