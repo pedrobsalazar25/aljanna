@@ -96,7 +96,7 @@ const CartPage = () => {
       <div className="px-4 mt-6 space-y-4">
         <div className="bg-secondary/50 border border-border rounded-xl p-4 space-y-3">
           <div>
-            <label className="text-xs text-muted-foreground font-body block mb-1">Tu Nombre</label>
+            <label className="text-xs text-black/60 font-body block mb-1">Tu Nombre</label>
             <input
               type="text"
               value={customerName}
