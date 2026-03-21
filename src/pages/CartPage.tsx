@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, Trash2, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 
 const PHONE = "584249147877";
 
