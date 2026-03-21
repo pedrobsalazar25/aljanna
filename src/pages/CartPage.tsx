@@ -30,10 +30,10 @@ const CartPage = () => {
 
   if (items.length === 0) {
     return (
-      <div className="pb-20 min-h-screen flex flex-col items-center justify-center px-6 text-center">
+      <div className="pb-20 min-h-screen flex flex-col items-center justify-center px-6 text-center bg-white">
         <ShoppingCart className="w-16 h-16 text-gold/30 mb-4" strokeWidth={1} />
-        <h2 className="font-body text-xl font-bold text-foreground">Tu carrito está vacío</h2>
-        <p className="text-muted-foreground text-sm font-body mt-2">Explora nuestro menú y agrega tus platos favoritos</p>
+        <h2 className="font-body text-xl font-bold text-black">Tu carrito está vacío</h2>
+        <p className="text-black/60 text-sm font-body mt-2">Explora nuestro menú y agrega tus platos favoritos</p>
         <button
           onClick={() => navigate("/cocina")}
           className="mt-6 gold-gradient text-primary font-body font-bold text-sm px-6 py-2.5 rounded-full"
