@@ -89,7 +89,8 @@ const ProductPage = () => {
             onClick={() => setShareOpen(!shareOpen)}
             className="flex items-center gap-2 text-primary/80 font-body text-sm font-semibold hover:opacity-60 transition-opacity"
           >
-            📤 Recomiéndalo a un amigo
+            <Share2 className="w-4 h-4" strokeWidth={1.5} />
+            Recomiéndalo a un amigo
           </button>
           {shareOpen && (
             <div className="mt-2 flex gap-2 animate-fade-up">
