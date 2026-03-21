@@ -80,26 +80,31 @@ const HomePage = () => {
             Ver Todos →
           </button>
         </div>
-        <div className="flex gap-3 overflow-x-auto no-scrollbar pb-2">
-          {events.map((event) => (
-            <div
-              key={event.id}
-              className="glass-gold rounded-xl min-w-[280px] overflow-hidden flex-shrink-0"
-            >
-              <div className="relative h-36">
-                <img src={eventNight} alt={event.title} className="w-full h-full object-cover" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <span className="absolute bottom-2 left-3 text-cream text-[10px] font-body bg-gold/80 px-2 py-0.5 rounded-full">
-                  {event.date}
-                </span>
-              </div>
-              <div className="p-3">
-                <h3 className="font-heading text-sm font-semibold">{event.title}</h3>
-                <p className="text-muted-foreground text-xs mt-1 line-clamp-2 font-body">{event.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          plugins={[Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-3">
+            {events.map((event) => (
+              <CarouselItem key={event.id} className="pl-3 basis-[280px]">
+                <div className="glass-gold rounded-xl overflow-hidden">
+                  <div className="relative h-36">
+                    <img src={eventNight} alt={event.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                    <span className="absolute bottom-2 left-3 text-cream text-[10px] font-body bg-gold/80 px-2 py-0.5 rounded-full">
+                      {event.date}
+                    </span>
+                  </div>
+                  <div className="p-3">
+                    <h3 className="font-body text-sm font-semibold">{event.title}</h3>
+                    <p className="text-muted-foreground text-xs mt-1 line-clamp-2 font-body">{event.description}</p>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </section>
 
       {/* Info Block */}
