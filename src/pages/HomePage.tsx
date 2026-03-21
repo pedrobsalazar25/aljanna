@@ -75,7 +75,7 @@ const HomePage = () => {
       {/* Events Carousel */}
       <section className="px-4 mt-10">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-heading text-xl font-bold text-foreground">Eventos y Promociones</h2>
+          <h2 className="font-body text-xl font-bold text-foreground">Eventos y Promociones</h2>
           <button onClick={() => navigate("/eventos")} className="text-gold text-xs font-body hover:underline">
             Ver Todos →
           </button>
