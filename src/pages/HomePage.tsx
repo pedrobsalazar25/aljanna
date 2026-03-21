@@ -62,7 +62,7 @@ const HomePage = () => {
       {/* Chef's Recommendations */}
       <section className="px-4 mt-10">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="font-heading text-xl font-bold text-foreground">Recomendación del Chef</h2>
+          <h2 className="font-body text-xl font-bold text-foreground">Recomendación del Chef</h2>
           <span className="text-gold text-xs font-body">⭐ Selección especial</span>
         </div>
         <div className="grid grid-cols-2 gap-3">
