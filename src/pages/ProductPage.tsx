@@ -133,7 +133,7 @@ const ProductPage = () => {
         <div className="bg-primary/5 border border-accent/20 rounded-xl p-4 flex items-center justify-between">
           <div>
             <p className="text-xs text-primary/60 font-body">Precio</p>
-            <p className="text-accent font-body text-2xl font-bold">${item.price.toFixed(2)}</p>
+            <p className="text-accent font-body text-2xl font-bold">{formatCurrency(item.price)}</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 border border-accent/30 rounded-full px-2 py-1">

@@ -115,6 +115,34 @@ const TopNav = () => {
                 <span>Contáctanos</span>
               </button>
 
+              {/* Currency Toggle */}
+              <div className="my-3 mx-6 border-t border-gold/15" />
+              <p className="px-6 text-[10px] uppercase tracking-widest text-cream/40 font-body mb-2">
+                Moneda
+              </p>
+              <div className="mx-6 flex rounded-full border border-gold/30 overflow-hidden">
+                <button
+                  onClick={() => setCurrency("USD")}
+                  className={`flex-1 py-2 text-xs font-body font-bold transition-all ${
+                    currency === "USD"
+                      ? "bg-gold text-primary"
+                      : "text-cream/60 hover:text-gold"
+                  }`}
+                >
+                  USD $
+                </button>
+                <button
+                  onClick={() => setCurrency("VES")}
+                  className={`flex-1 py-2 text-xs font-body font-bold transition-all ${
+                    currency === "VES"
+                      ? "bg-gold text-primary"
+                      : "text-cream/60 hover:text-gold"
+                  }`}
+                >
+                  VES Bs.
+                </button>
+              </div>
+
               {/* Divider */}
               <div className="my-3 mx-6 border-t border-gold/15" />
 
