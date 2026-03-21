@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import {
   Sheet,
   SheetContent,
