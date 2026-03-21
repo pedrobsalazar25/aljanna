@@ -11,6 +11,7 @@ interface MenuCardProps {
 const MenuCard = ({ item }: MenuCardProps) => {
   const navigate = useNavigate();
   const { addItem } = useCart();
+  const { formatCurrency } = useCurrency();
 
   return (
     <div
