@@ -19,10 +19,10 @@ const CartPage = () => {
     if (!customerName.trim()) return;
 
     const itemLines = items
-      .map((ci) => `- ${ci.item.name} x${ci.quantity} ($${(ci.item.price * ci.quantity).toFixed(2)})`)
+      .map((ci) => `- ${ci.item.name} x${ci.quantity} (${formatCurrency(ci.item.price * ci.quantity)})`)
       .join("\n");
 
-    const message = `🍽️ *Nuevo Pedido de Al Janna Sweet*\n\n👤 Cliente: ${customerName}\n\n📋 Pedido:\n${itemLines}\n\n💰 Total: $${totalPrice.toFixed(2)}\n💳 Pago: ${paymentMethod}`;
+    const message = `🍽️ *Nuevo Pedido de Al Janna Sweet*\n\n👤 Cliente: ${customerName}\n\n📋 Pedido:\n${itemLines}\n\n💰 Total: ${formatCurrency(totalPrice)}\n💳 Pago: ${paymentMethod}`;
 
     window.open(
       `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`,
