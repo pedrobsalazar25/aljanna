@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Plus } from "lucide-react";
 import type { MenuItem } from "@/data/menuData";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 
 interface MenuCardProps {
   item: MenuItem;
