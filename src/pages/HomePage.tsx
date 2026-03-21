@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { UtensilsCrossed, Cake, Wine, MapPin, Clock, Phone, Mail } from "lucide-react";
+import Autoplay from "embla-carousel-autoplay";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import logo from "@/assets/logo.png";
 import { heroBg, eventNight, getChefRecommendations, events } from "@/data/menuData";
 import MenuCard from "@/components/MenuCard";
