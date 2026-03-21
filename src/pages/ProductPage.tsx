@@ -5,6 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { getItemById, getPairsWellWith, getItemsByCategory } from "@/data/menuData";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import MenuCard from "@/components/MenuCard";
 
 const ProductPage = () => {
