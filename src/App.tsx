@@ -25,6 +25,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <div className="max-w-lg mx-auto relative min-h-screen animated-gradient-bg">
+            <ScrollToTop />
             <TopNav />
             <div className="pt-14">
               <Routes>
