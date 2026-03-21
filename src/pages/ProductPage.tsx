@@ -12,6 +12,7 @@ const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { addItem } = useCart();
+  const { formatCurrency } = useCurrency();
   const [quantity, setQuantity] = useState(1);
   const [shareOpen, setShareOpen] = useState(false);
 
