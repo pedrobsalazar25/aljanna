@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { Plus } from "lucide-react";
 import type { MenuItem } from "@/data/menuData";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 
 interface MenuCardProps {
   item: MenuItem;
@@ -10,6 +11,7 @@ interface MenuCardProps {
 const MenuCard = ({ item }: MenuCardProps) => {
   const navigate = useNavigate();
   const { addItem } = useCart();
+  const { formatCurrency } = useCurrency();
 
   return (
     <div
@@ -33,7 +35,7 @@ const MenuCard = ({ item }: MenuCardProps) => {
         <h3 className="font-body text-sm font-semibold text-foreground truncate">{item.name}</h3>
         <p className="text-foreground text-xs mt-1 line-clamp-2 font-body">{item.description}</p>
         <div className="flex items-center justify-between mt-3">
-          <span className="text-gold font-body font-bold text-lg">${item.price.toFixed(2)}</span>
+          <span className="text-gold font-body font-bold text-lg">{formatCurrency(item.price)}</span>
           <button
             onClick={(e) => {
               e.stopPropagation();

@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, Trash2, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 
 const PHONE = "584249147877";
 
@@ -10,6 +11,7 @@ type PaymentMethod = "Efectivo" | "Transferencia";
 const CartPage = () => {
   const navigate = useNavigate();
   const { items, updateQuantity, removeItem, clearCart, totalPrice } = useCart();
+  const { formatCurrency, currency } = useCurrency();
   const [customerName, setCustomerName] = useState("");
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("Efectivo");
 
@@ -17,10 +19,10 @@ const CartPage = () => {
     if (!customerName.trim()) return;
 
     const itemLines = items
-      .map((ci) => `- ${ci.item.name} x${ci.quantity} ($${(ci.item.price * ci.quantity).toFixed(2)})`)
+      .map((ci) => `- ${ci.item.name} x${ci.quantity} (${formatCurrency(ci.item.price * ci.quantity)})`)
       .join("\n");
 
-    const message = `🍽️ *Nuevo Pedido de Al Janna Sweet*\n\n👤 Cliente: ${customerName}\n\n📋 Pedido:\n${itemLines}\n\n💰 Total: $${totalPrice.toFixed(2)}\n💳 Pago: ${paymentMethod}`;
+    const message = `🍽️ *Nuevo Pedido de Al Janna Sweet*\n\n👤 Cliente: ${customerName}\n\n📋 Pedido:\n${itemLines}\n\n💰 Total: ${formatCurrency(totalPrice)}\n💳 Pago: ${paymentMethod}`;
 
     window.open(
       `https://wa.me/${PHONE}?text=${encodeURIComponent(message)}`,
@@ -65,7 +67,7 @@ const CartPage = () => {
             />
             <div className="flex-1 min-w-0">
               <h3 className="font-body text-sm font-semibold text-black truncate">{ci.item.name}</h3>
-              <p className="text-gold font-body font-bold mt-1">${(ci.item.price * ci.quantity).toFixed(2)}</p>
+              <p className="text-gold font-body font-bold mt-1">{formatCurrency(ci.item.price * ci.quantity)}</p>
               <div className="flex items-center gap-2 mt-2">
                 <button
                   onClick={() => updateQuantity(ci.item.id, ci.quantity - 1)}
@@ -129,7 +131,7 @@ const CartPage = () => {
         <div className="bg-secondary/50 border border-border rounded-xl p-4">
           <div className="flex justify-between items-center mb-4">
             <span className="font-body text-sm text-black/60">Total</span>
-            <span className="font-body text-2xl font-bold text-accent">${totalPrice.toFixed(2)}</span>
+            <span className="font-body text-2xl font-bold text-accent">{formatCurrency(totalPrice)}</span>
           </div>
           <button
             onClick={handleCheckout}

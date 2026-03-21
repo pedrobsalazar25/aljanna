@@ -5,12 +5,14 @@ import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { getItemById, getPairsWellWith, getItemsByCategory } from "@/data/menuData";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import MenuCard from "@/components/MenuCard";
 
 const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { addItem } = useCart();
+  const { formatCurrency } = useCurrency();
   const [quantity, setQuantity] = useState(1);
   const [shareOpen, setShareOpen] = useState(false);
 
@@ -131,7 +133,7 @@ const ProductPage = () => {
         <div className="bg-primary/5 border border-accent/20 rounded-xl p-4 flex items-center justify-between">
           <div>
             <p className="text-xs text-primary/60 font-body">Precio</p>
-            <p className="text-accent font-body text-2xl font-bold">${item.price.toFixed(2)}</p>
+            <p className="text-accent font-body text-2xl font-bold">{formatCurrency(item.price)}</p>
           </div>
           <div className="flex items-center gap-3">
             <div className="flex items-center gap-2 border border-accent/30 rounded-full px-2 py-1">
