@@ -115,7 +115,7 @@ const CartPage = () => {
                   className={`flex-1 py-2 rounded-lg text-sm font-body transition-all border ${
                     paymentMethod === method
                       ? "border-accent bg-accent/10 text-accent font-bold"
-                      : "border-border text-muted-foreground hover:border-accent/40"
+                      : "border-border text-black/60 hover:border-accent/40"
                   }`}
                 >
                   {method}
