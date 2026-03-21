@@ -64,7 +64,7 @@ const CartPage = () => {
               className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
             />
             <div className="flex-1 min-w-0">
-              <h3 className="font-body text-sm font-semibold truncate">{ci.item.name}</h3>
+              <h3 className="font-body text-sm font-semibold text-black truncate">{ci.item.name}</h3>
               <p className="text-gold font-body font-bold mt-1">${(ci.item.price * ci.quantity).toFixed(2)}</p>
               <div className="flex items-center gap-2 mt-2">
                 <button
