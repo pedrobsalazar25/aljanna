@@ -26,7 +26,7 @@ const EventsPage = () => {
                   <Calendar className="w-3.5 h-3.5 text-gold" strokeWidth={1.5} />
                   <span className="text-gold text-[11px] font-body">{event.date}</span>
                 </div>
-                <h3 className="font-heading text-lg font-bold text-cream">{event.title}</h3>
+                <h3 className="font-body text-lg font-bold text-cream">{event.title}</h3>
               </div>
             </div>
             <div className="p-4">

@@ -31,7 +31,7 @@ const MenuCategoryPage = ({ category }: MenuCategoryPageProps) => {
           <ArrowLeft className="w-5 h-5" strokeWidth={1.5} />
         </button>
         <div>
-          <h1 className="font-heading text-lg font-bold text-cream">{categoryLabels[category]}</h1>
+          <h1 className="font-body text-lg font-bold text-cream">{categoryLabels[category]}</h1>
           <p className="text-cream/50 text-[10px] font-body">{categoryDescriptions[category]}</p>
         </div>
       </div>
