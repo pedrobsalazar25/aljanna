@@ -106,7 +106,7 @@ const CartPage = () => {
             />
           </div>
           <div>
-            <label className="text-xs text-muted-foreground font-body block mb-1">Método de Pago</label>
+            <label className="text-xs text-black/60 font-body block mb-1">Método de Pago</label>
             <div className="flex gap-2">
               {(["Efectivo", "Transferencia"] as PaymentMethod[]).map((method) => (
                 <button
