@@ -109,7 +109,7 @@ const HomePage = () => {
 
       {/* Info Block */}
       <section id="contact-section" className="px-4 mt-10 mb-6">
-        <h2 className="font-heading text-xl font-bold text-foreground mb-4">Encuéntranos</h2>
+        <h2 className="font-body text-xl font-bold text-foreground mb-4">Encuéntranos</h2>
         <div className="glass-gold rounded-xl p-5 space-y-4">
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
