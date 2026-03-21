@@ -67,7 +67,7 @@ const CartPage = () => {
             />
             <div className="flex-1 min-w-0">
               <h3 className="font-body text-sm font-semibold text-black truncate">{ci.item.name}</h3>
-              <p className="text-gold font-body font-bold mt-1">${(ci.item.price * ci.quantity).toFixed(2)}</p>
+              <p className="text-gold font-body font-bold mt-1">{formatCurrency(ci.item.price * ci.quantity)}</p>
               <div className="flex items-center gap-2 mt-2">
                 <button
                   onClick={() => updateQuantity(ci.item.id, ci.quantity - 1)}
