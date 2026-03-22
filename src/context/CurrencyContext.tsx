@@ -25,21 +25,24 @@ export const CurrencyProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const fetchRate = async () => {
-      try {
-        const res = await fetch("https://pydolarve.org/api/v2/dollar?page=bcv", {
-          headers: { Accept: "application/json" },
-        });
-        const data = await res.json();
-        const rate = data?.monitors?.usd?.price;
-        if (rate) setBcvRate(parseFloat(rate));
-      } catch {
+      const apis = [
+        "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://pydolarve.org/api/v2/dollar?page=bcv"),
+        "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://bcv-api.rafnixg.dev/rates/"),
+      ];
+      for (const url of apis) {
         try {
-          const res2 = await fetch("https://bcv-api.rafnixg.dev/rates/");
-          const data2 = await res2.json();
-          if (data2?.USD?.rate) setBcvRate(parseFloat(data2.USD.rate));
-          else if (data2?.rates?.USD) setBcvRate(parseFloat(data2.rates.USD));
-          else if (typeof data2?.USD === "number") setBcvRate(data2.USD);
-        } catch { /* silent */ }
+          const res = await fetch(url);
+          const data = await res.json();
+          // pydolarve format
+          if (data?.monitors?.usd?.price) {
+            setBcvRate(parseFloat(data.monitors.usd.price));
+            return;
+          }
+          // rafnixg format
+          if (data?.USD?.rate) { setBcvRate(parseFloat(data.USD.rate)); return; }
+          if (data?.rates?.USD) { setBcvRate(parseFloat(data.rates.USD)); return; }
+          if (typeof data?.USD === "number") { setBcvRate(data.USD); return; }
+        } catch { /* try next */ }
       }
     };
     fetchRate();
