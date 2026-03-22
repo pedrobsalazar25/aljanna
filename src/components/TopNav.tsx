@@ -56,7 +56,7 @@ const socialLinks = [
 const TopNav = () => {
   const navigate = useNavigate();
   const { totalItems } = useCart();
-  const { currency, setCurrency } = useCurrency();
+  const { currency, setCurrency, bcvRate } = useCurrency();
   const [searchOpen, setSearchOpen] = useState(false);
   const [sheetOpen, setSheetOpen] = useState(false);
 
@@ -117,9 +117,14 @@ const TopNav = () => {
 
               {/* Currency Toggle */}
               <div className="my-3 mx-6 border-t border-gold/15" />
-              <p className="px-6 text-[10px] uppercase tracking-widest text-cream/40 font-body mb-2">
+              <p className="px-6 text-[10px] uppercase tracking-widest text-cream/40 font-body mb-1">
                 Moneda
               </p>
+              {bcvRate && (
+                <p className="px-6 text-[10px] text-gold/70 font-body mb-2">
+                  Tasa BCV: 1 USD = {bcvRate.toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Bs.
+                </p>
+              )}
               <div className="mx-6 flex rounded-full border border-gold/30 overflow-hidden">
                 <button
                   onClick={() => setCurrency("USD")}

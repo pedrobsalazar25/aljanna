@@ -24,14 +24,25 @@ export const CurrencyProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   useEffect(() => {
-    fetch("https://bcv-api.rafnixg.dev/rates/")
-      .then((r) => r.json())
-      .then((data) => {
-        if (data?.USD?.rate) setBcvRate(parseFloat(data.USD.rate));
-        else if (data?.rates?.USD) setBcvRate(parseFloat(data.rates.USD));
-        else if (typeof data?.USD === "number") setBcvRate(data.USD);
-      })
-      .catch(() => {});
+    const fetchRate = async () => {
+      try {
+        const res = await fetch("https://pydolarve.org/api/v2/dollar?page=bcv", {
+          headers: { Accept: "application/json" },
+        });
+        const data = await res.json();
+        const rate = data?.monitors?.usd?.price;
+        if (rate) setBcvRate(parseFloat(rate));
+      } catch {
+        try {
+          const res2 = await fetch("https://bcv-api.rafnixg.dev/rates/");
+          const data2 = await res2.json();
+          if (data2?.USD?.rate) setBcvRate(parseFloat(data2.USD.rate));
+          else if (data2?.rates?.USD) setBcvRate(parseFloat(data2.rates.USD));
+          else if (typeof data2?.USD === "number") setBcvRate(data2.USD);
+        } catch { /* silent */ }
+      }
+    };
+    fetchRate();
   }, []);
 
   const formatCurrency = useCallback(
