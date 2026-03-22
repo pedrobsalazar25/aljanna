@@ -123,7 +123,8 @@ const TopNav = () => {
               {bcvRate && (
                 <p className="px-6 text-[10px] text-gold/70 font-body mb-2">
                   Tasa BCV: 1 USD = {bcvRate.toLocaleString("es-VE", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} Bs.
-              </p>
+                </p>
+              )}
               <div className="mx-6 flex rounded-full border border-gold/30 overflow-hidden">
                 <button
                   onClick={() => setCurrency("USD")}
