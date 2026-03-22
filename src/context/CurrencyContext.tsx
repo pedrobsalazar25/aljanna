@@ -38,7 +38,8 @@ export const CurrencyProvider = ({ children }: { children: ReactNode }) => {
             setBcvRate(parseFloat(data.monitors.usd.price));
             return;
           }
-          // rafnixg format
+          // rafnixg format: {"dollar": 457.07, "date": "..."}
+          if (typeof data?.dollar === "number") { setBcvRate(data.dollar); return; }
           if (data?.USD?.rate) { setBcvRate(parseFloat(data.USD.rate)); return; }
           if (data?.rates?.USD) { setBcvRate(parseFloat(data.rates.USD)); return; }
           if (typeof data?.USD === "number") { setBcvRate(data.USD); return; }
