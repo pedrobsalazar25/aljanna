@@ -51,7 +51,7 @@ const HomePage = () => {
             </CarouselItem>
             {/* Slide 2 */}
             <CarouselItem className="pl-0 relative h-[70vh] min-h-[480px] flex items-center justify-center">
-              <img src={heroImage2} alt="Delivery Al Janna" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={heroImage2} alt="Delivery Al Janna" className="absolute inset-0 w-full h-full object-contain" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
               <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fade-up">
                 <h2 className="font-body text-3xl md:text-4xl font-bold text-cream mb-3 drop-shadow-lg">
@@ -113,7 +113,7 @@ const HomePage = () => {
           <CarouselContent className="-ml-3">
             {events.map((event) => (
               <CarouselItem key={event.id} className="pl-3 basis-[280px]">
-                <div className="glass-gold rounded-xl overflow-hidden">
+                <div className="glass-white rounded-xl overflow-hidden">
                   <div className="relative h-36">
                     <img src={eventNight} alt={event.title} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -135,7 +135,7 @@ const HomePage = () => {
       {/* Info Block */}
       <section id="contact-section" className="px-4 mt-10 mb-6">
         <h2 className="font-body text-xl font-bold text-foreground mb-4">Encuéntranos</h2>
-        <div className="glass-gold rounded-xl p-5 space-y-4">
+        <div className="glass-white rounded-xl p-5 space-y-4">
           <div className="flex items-start gap-3">
             <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>

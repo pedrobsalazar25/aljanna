@@ -106,6 +106,14 @@
     box-shadow: 0 8px 32px 0 hsla(43 56% 52% / 0.08);
   }
 
+  .glass-white {
+    background: hsla(0 0% 100% / 0.15);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid hsla(0 0% 100% / 0.25);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.08);
+  }
+
   .text-gold {
     color: hsl(43 56% 52%);
   }
