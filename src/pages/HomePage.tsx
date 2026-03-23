@@ -27,19 +27,43 @@ const HomePage = () => {
   return (
     <div className="pb-20">
       {/* Hero */}
-      <section className="relative h-[70vh] min-h-[480px] flex items-center justify-center overflow-hidden">
-        <img src={heroBg} alt="Al Janna Restaurant" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
-        <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fade-up">
-          <img src={logo} alt="Al Janna Sweet" className="w-48 md:w-64 mb-4 drop-shadow-2xl" />
-          <p className="text-cream/80 font-body text-sm md:text-base max-w-md tracking-wide">
-            Auténtica cocina turca en el corazón de Maturín
-          </p>
-          <div className="flex items-center gap-2 mt-4">
-            <span className={`w-2 h-2 rounded-full ${open ? "bg-green-400" : "bg-red-400"} animate-pulse`} />
-            <span className="text-cream/70 text-xs font-body">{open ? "Abierto Ahora" : "Cerrado"} · 11:00 AM - 10:00 PM</span>
-          </div>
-        </div>
+      <section className="relative h-[70vh] min-h-[480px] overflow-hidden">
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          plugins={[Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]}
+          className="w-full h-full"
+        >
+          <CarouselContent className="ml-0 h-full">
+            {/* Slide 1 */}
+            <CarouselItem className="pl-0 relative h-[70vh] min-h-[480px] flex items-center justify-center">
+              <img src={heroBg} alt="Al Janna Restaurant" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+              <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fade-up">
+                <img src={logo} alt="Al Janna Sweet" className="w-48 md:w-64 mb-4 drop-shadow-2xl" />
+                <p className="text-cream/80 font-body text-sm md:text-base max-w-md tracking-wide">
+                  Auténtica cocina turca en el corazón de Maturín
+                </p>
+                <div className="flex items-center gap-2 mt-4">
+                  <span className={`w-2 h-2 rounded-full ${open ? "bg-green-400" : "bg-red-400"} animate-pulse`} />
+                  <span className="text-cream/70 text-xs font-body">{open ? "Abierto Ahora" : "Cerrado"} · 11:00 AM - 10:00 PM</span>
+                </div>
+              </div>
+            </CarouselItem>
+            {/* Slide 2 */}
+            <CarouselItem className="pl-0 relative h-[70vh] min-h-[480px] flex items-center justify-center">
+              <img src={heroImage2} alt="Delivery Al Janna" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
+              <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fade-up">
+                <h2 className="font-body text-3xl md:text-4xl font-bold text-cream mb-3 drop-shadow-lg">
+                  Delicias que llegan volando.
+                </h2>
+                <p className="text-cream/80 font-body text-sm md:text-base max-w-md tracking-wide">
+                  Nuestra plataforma es tan simple que lo único difícil será elegir qué comer.
+                </p>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+        </Carousel>
       </section>
 
       {/* Category Circles */}
