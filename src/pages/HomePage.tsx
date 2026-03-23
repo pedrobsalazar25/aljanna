@@ -3,6 +3,7 @@ import { UtensilsCrossed, Cake, Wine, MapPin, Clock, Phone, Mail } from "lucide-
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import logo from "@/assets/logo.png";
+import heroImage2 from "@/assets/hero_image_2.png";
 import { heroBg, eventNight, getChefRecommendations, events } from "@/data/menuData";
 import MenuCard from "@/components/MenuCard";
 
