@@ -51,7 +51,7 @@ const HomePage = () => {
             </CarouselItem>
             {/* Slide 2 */}
             <CarouselItem className="pl-0 relative h-[70vh] min-h-[480px] flex items-center justify-center">
-              <img src={heroImage2} alt="Delivery Al Janna" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={heroImage2} alt="Delivery Al Janna" className="absolute inset-0 w-full h-full object-contain" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
               <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fade-up">
                 <h2 className="font-body text-3xl md:text-4xl font-bold text-cream mb-3 drop-shadow-lg">
