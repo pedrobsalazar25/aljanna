@@ -147,21 +147,21 @@ const HomePage = () => {
             <Phone className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>
               <p className="text-sm font-body font-medium">Teléfono</p>
-              <a href="tel:+584249147877" className="text-xs text-muted-foreground font-body hover:text-gold">+58 424-9147877</a>
+              <a href="tel:+584249147877" className="text-xs text-black font-body hover:text-gold">+58 424-9147877</a>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>
               <p className="text-sm font-body font-medium">Email</p>
-              <a href="mailto:Aljannasweet@gmail.com" className="text-xs text-muted-foreground font-body hover:text-gold">Aljannasweet@gmail.com</a>
+              <a href="mailto:Aljannasweet@gmail.com" className="text-xs text-black font-body hover:text-gold">Aljannasweet@gmail.com</a>
             </div>
           </div>
           <div className="flex items-start gap-3">
             <Clock className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>
               <p className="text-sm font-body font-medium">Horario</p>
-              <p className="text-xs text-muted-foreground font-body">Lunes a Domingo: 11:00 AM - 10:00 PM</p>
+              <p className="text-xs text-black font-body">Lunes a Domingo: 11:00 AM - 10:00 PM</p>
             </div>
           </div>
           {/* Minimalist map embed */}
