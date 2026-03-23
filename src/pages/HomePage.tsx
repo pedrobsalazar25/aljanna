@@ -50,8 +50,8 @@ const HomePage = () => {
               </div>
             </CarouselItem>
             {/* Slide 2 */}
-            <CarouselItem className="pl-0 relative h-[70vh] min-h-[480px] flex items-center justify-center">
-              <img src={heroImage2} alt="Delivery Al Janna" className="absolute inset-0 w-full h-full object-contain" />
+            <CarouselItem className="pl-0 relative h-[85vh] min-h-[560px] flex items-center justify-center">
+              <img src={heroImage2} alt="Delivery Al Janna" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
               <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fade-up">
                 <h2 className="font-body text-3xl md:text-4xl font-bold text-cream mb-3 drop-shadow-lg">
@@ -123,7 +123,7 @@ const HomePage = () => {
                   </div>
                   <div className="p-3">
                     <h3 className="font-body text-sm font-semibold">{event.title}</h3>
-                    <p className="text-muted-foreground text-xs mt-1 line-clamp-2 font-body">{event.description}</p>
+                    <p className="text-black text-xs mt-1 line-clamp-2 font-body">{event.description}</p>
                   </div>
                 </div>
               </CarouselItem>
@@ -140,7 +140,7 @@ const HomePage = () => {
             <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>
               <p className="text-sm font-body font-medium">Dirección</p>
-              <p className="text-xs text-muted-foreground font-body">Centro Empresarial Vista Norte, Sector Tipuro II, Maturín, Venezuela</p>
+              <p className="text-xs text-black font-body">Centro Empresarial Vista Norte, Sector Tipuro II, Maturín, Venezuela</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
