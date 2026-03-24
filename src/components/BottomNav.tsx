@@ -30,8 +30,8 @@ const BottomNav = () => {
           onClick={() => navigate(item.path)}
           className="relative -mt-7 flex flex-col items-center justify-center"
         >
-          <div className="w-14 h-14 rounded-full bg-white border-[3px] border-white shadow-lg flex items-center justify-center">
-            <div className={`w-11 h-11 rounded-full flex items-center justify-center ${isActive ? "bg-gold" : "bg-black"}`}>
+          <div className={`w-14 h-14 rounded-full border-[3px] shadow-lg flex items-center justify-center transition-all duration-300 ${isActive ? "border-gold bg-gold" : "border-gold/40 bg-black"}`}>
+            <div className="w-11 h-11 rounded-full flex items-center justify-center bg-black transition-all duration-300">
               <Icon className={`w-5 h-5 ${isActive ? "text-black" : "text-white"}`} strokeWidth={1.5} />
               {totalItems > 0 && (
                 <span className="absolute -top-1 -right-1 bg-gold text-black text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center animate-pulse-gold">
@@ -50,7 +50,7 @@ const BottomNav = () => {
         key={item.path}
         onClick={() => navigate(item.path)}
         className={`flex flex-col items-center justify-center gap-0.5 flex-1 py-2 transition-all duration-300 ${
-          isActive ? "text-gold" : "text-cream/60 hover:text-cream/90"
+          isActive ? "text-gold scale-110" : "text-cream/60 hover:text-cream/90"
         }`}
       >
         <Icon className="w-5 h-5" strokeWidth={1.5} />
