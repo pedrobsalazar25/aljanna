@@ -4,6 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import logo from "@/assets/logo.png";
 import heroImage2 from "@/assets/hero_image_2.png";
+import deliveryHero from "@/assets/delivery-hero.jpg";
 import { heroBg, eventNight, getChefRecommendations, events } from "@/data/menuData";
 import MenuCard from "@/components/MenuCard";
 
@@ -59,6 +60,19 @@ const HomePage = () => {
                 </h2>
                 <p className="text-cream/80 font-body text-sm md:text-base max-w-md tracking-wide">
                   Nuestra plataforma es tan simple que lo único difícil será elegir qué comer.
+                </p>
+              </div>
+            </CarouselItem>
+            {/* Slide 3 - Delivery */}
+            <CarouselItem className="pl-0 relative h-[80vh] min-h-[520px] flex items-center justify-center">
+              <img src={deliveryHero} alt="Delivery Al Janna" className="absolute inset-0 w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
+              <div className="relative z-10 flex flex-col items-center text-center px-6 animate-fade-up">
+                <h2 className="font-body text-3xl md:text-4xl font-bold text-cream mb-3 drop-shadow-lg">
+                  Pide, confirma y disfruta.
+                </h2>
+                <p className="text-cream/80 font-body text-sm md:text-base max-w-md tracking-wide">
+                  Arma tu pedido, confírmalo por WhatsApp y recibe tu comida favorita en la puerta de tu casa.
                 </p>
               </div>
             </CarouselItem>
