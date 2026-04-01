@@ -25,6 +25,16 @@ const HomePage = () => {
   const navigate = useNavigate();
   const chefPicks = getChefRecommendations();
   const open = isOpenNow();
+  const [heroApi, setHeroApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!heroApi) return;
+    setCount(heroApi.scrollSnapList().length);
+    setCurrent(heroApi.selectedScrollSnap());
+    heroApi.on("select", () => setCurrent(heroApi.selectedScrollSnap()));
+  }, [heroApi]);
 
   return (
     <div className="pb-20">
