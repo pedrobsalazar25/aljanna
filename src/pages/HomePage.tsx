@@ -108,15 +108,13 @@ const HomePage = () => {
       {/* Category Circles */}
       <section className="px-4 -mt-8 relative z-10">
         <div className="glass-dark border border-gold/20 rounded-full px-6 py-3 flex justify-center gap-8 mx-auto w-fit shadow-xl">
-          {categories.map(({ path, icon: Icon, label, color }) => (
+          {categories.map(({ path, icon: Icon, label }) => (
             <button
               key={path}
               onClick={() => navigate(path)}
               className="flex flex-col items-center gap-1.5 group"
             >
-              <div className={`w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br ${color} flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                <Icon className="w-6 h-6 text-primary" strokeWidth={1.5} />
-              </div>
+              <Icon className="w-8 h-8 md:w-10 md:h-10 text-gold group-hover:scale-110 transition-transform" strokeWidth={1.5} />
               <span className="text-[10px] font-body text-foreground font-medium">{label}</span>
             </button>
           ))}
