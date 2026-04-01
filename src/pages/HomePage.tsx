@@ -89,6 +89,19 @@ const HomePage = () => {
               </div>
             </CarouselItem>
           </CarouselContent>
+          {/* Dot indicators */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {Array.from({ length: count }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => heroApi?.scrollTo(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  i === current ? "bg-gold w-6" : "bg-cream/40 hover:bg-cream/60"
+                }`}
+                aria-label={`Ir al slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </Carousel>
       </section>
 
