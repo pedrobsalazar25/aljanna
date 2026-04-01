@@ -18,11 +18,11 @@ const MenuCard = ({ item }: MenuCardProps) => {
       className="glass-dark border-gold/20 rounded-xl overflow-hidden cursor-pointer group animate-fade-up"
       onClick={() => navigate(`/plato/${item.id}`)}
     >
-      <div className="relative aspect-square overflow-hidden">
+      <div className="relative aspect-square overflow-hidden p-2">
         <img
           src={item.image}
           alt={item.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full h-full object-cover rounded-lg group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
         />
         {item.isChefRecommendation && (
