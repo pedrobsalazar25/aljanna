@@ -1,7 +1,8 @@
+import { useState, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { UtensilsCrossed, Cake, Wine, MapPin, Clock, Phone, Mail } from "lucide-react";
 import Autoplay from "embla-carousel-autoplay";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import logo from "@/assets/logo.png";
 import heroImage2 from "@/assets/hero_image_2.png";
 import deliveryHero from "@/assets/delivery-hero.jpg";
@@ -24,6 +25,16 @@ const HomePage = () => {
   const navigate = useNavigate();
   const chefPicks = getChefRecommendations();
   const open = isOpenNow();
+  const [heroApi, setHeroApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!heroApi) return;
+    setCount(heroApi.scrollSnapList().length);
+    setCurrent(heroApi.selectedScrollSnap());
+    heroApi.on("select", () => setCurrent(heroApi.selectedScrollSnap()));
+  }, [heroApi]);
 
   return (
     <div className="pb-20">
@@ -33,6 +44,7 @@ const HomePage = () => {
           opts={{ align: "start", loop: true }}
           plugins={[Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]}
           className="w-full h-full"
+          setApi={setHeroApi}
         >
           <CarouselContent className="ml-0 h-full">
             {/* Slide 1 */}
@@ -77,6 +89,19 @@ const HomePage = () => {
               </div>
             </CarouselItem>
           </CarouselContent>
+          {/* Dot indicators */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {Array.from({ length: count }).map((_, i) => (
+              <button
+                key={i}
+                onClick={() => heroApi?.scrollTo(i)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  i === current ? "bg-gold w-6" : "bg-cream/40 hover:bg-cream/60"
+                }`}
+                aria-label={`Ir al slide ${i + 1}`}
+              />
+            ))}
+          </div>
         </Carousel>
       </section>
 
