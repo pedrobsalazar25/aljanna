@@ -44,6 +44,7 @@ const HomePage = () => {
           opts={{ align: "start", loop: true }}
           plugins={[Autoplay({ delay: 5000, stopOnInteraction: false, stopOnMouseEnter: true })]}
           className="w-full h-full"
+          setApi={setHeroApi}
         >
           <CarouselContent className="ml-0 h-full">
             {/* Slide 1 */}
