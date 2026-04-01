@@ -135,33 +135,33 @@ const HomePage = () => {
       {/* Info Block */}
       <section id="contact-section" className="px-4 mt-10 mb-6">
         <h2 className="font-body text-xl font-bold text-foreground mb-4">Encuéntranos</h2>
-        <div className="glass-white rounded-xl p-5 space-y-4">
+        <div className="glass-dark border border-gold/20 rounded-xl p-5 space-y-4">
           <div className="flex items-start gap-3">
-            <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+            <MapPin className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>
-              <p className="text-sm font-body font-medium">Dirección</p>
-              <p className="text-xs text-black font-body">Centro Empresarial Vista Norte, Sector Tipuro II, Maturín, Venezuela</p>
+              <p className="text-sm font-body font-medium text-foreground">Dirección</p>
+              <p className="text-xs text-foreground/70 font-body">Centro Empresarial Vista Norte, Sector Tipuro II, Maturín, Venezuela</p>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Phone className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+            <Phone className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>
-              <p className="text-sm font-body font-medium">Teléfono</p>
-              <a href="tel:+584249147877" className="text-xs text-black font-body hover:text-gold">+58 424-9147877</a>
+              <p className="text-sm font-body font-medium text-foreground">Teléfono</p>
+              <a href="tel:+584249147877" className="text-xs text-foreground/70 font-body hover:text-gold">+58 424-9147877</a>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+            <Mail className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>
-              <p className="text-sm font-body font-medium">Email</p>
-              <a href="mailto:Aljannasweet@gmail.com" className="text-xs text-black font-body hover:text-gold">Aljannasweet@gmail.com</a>
+              <p className="text-sm font-body font-medium text-foreground">Email</p>
+              <a href="mailto:Aljannasweet@gmail.com" className="text-xs text-foreground/70 font-body hover:text-gold">Aljannasweet@gmail.com</a>
             </div>
           </div>
           <div className="flex items-start gap-3">
-            <Clock className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" strokeWidth={1.5} />
+            <Clock className="w-5 h-5 text-foreground flex-shrink-0 mt-0.5" strokeWidth={1.5} />
             <div>
-              <p className="text-sm font-body font-medium">Horario</p>
-              <p className="text-xs text-black font-body">Lunes a Domingo: 11:00 AM - 10:00 PM</p>
+              <p className="text-sm font-body font-medium text-foreground">Horario</p>
+              <p className="text-xs text-foreground/70 font-body">Lunes a Domingo: 11:00 AM - 10:00 PM</p>
             </div>
           </div>
           {/* Minimalist map embed */}
