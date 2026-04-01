@@ -4,6 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import logo from "@/assets/logo.png";
 import heroImage2 from "@/assets/hero_image_2.png";
+import deliveryHero from "@/assets/delivery-hero.jpg";
 import { heroBg, eventNight, getChefRecommendations, events } from "@/data/menuData";
 import MenuCard from "@/components/MenuCard";
 
