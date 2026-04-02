@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Menu,
@@ -12,6 +12,7 @@ import {
   CalendarDays,
   Phone,
 } from "lucide-react";
+import { menuItems } from "@/data/menuData";
 import logo from "@/assets/logo.png";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
