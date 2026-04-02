@@ -8,6 +8,7 @@ import heroImage2 from "@/assets/hero_image_2.png";
 import deliveryHero from "@/assets/delivery-hero.jpg";
 import { heroBg, eventNight, getChefRecommendations, events } from "@/data/menuData";
 import MenuCard from "@/components/MenuCard";
+import InstagramFeed from "@/components/InstagramFeed";
 
 const categories = [
   { path: "/cocina", icon: UtensilsCrossed, label: "Cocina", color: "from-gold-dark to-gold" },
@@ -168,6 +169,9 @@ const HomePage = () => {
           </CarouselContent>
         </Carousel>
       </section>
+
+      {/* Instagram Feed */}
+      <InstagramFeed />
 
       {/* Info Block */}
       <section id="contact-section" className="px-4 mt-10 mb-6">
