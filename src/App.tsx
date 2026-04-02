@@ -30,18 +30,20 @@ const App = () => (
           <div className="max-w-lg mx-auto relative min-h-screen animated-gradient-bg">
             <ScrollToTop />
             <TopNav />
-            <div className="pt-14">
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/cocina" element={<MenuCategoryPage category="cocina" />} />
-                <Route path="/postres" element={<MenuCategoryPage category="postres" />} />
-                <Route path="/bebidas" element={<MenuCategoryPage category="bebidas" />} />
-                <Route path="/plato/:id" element={<ProductPage />} />
-                <Route path="/carrito" element={<CartPage />} />
-                <Route path="/eventos" element={<EventsPage />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </div>
+            <PullToRefresh>
+              <div className="pt-14">
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/cocina" element={<MenuCategoryPage category="cocina" />} />
+                  <Route path="/postres" element={<MenuCategoryPage category="postres" />} />
+                  <Route path="/bebidas" element={<MenuCategoryPage category="bebidas" />} />
+                  <Route path="/plato/:id" element={<ProductPage />} />
+                  <Route path="/carrito" element={<CartPage />} />
+                  <Route path="/eventos" element={<EventsPage />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </div>
+            </PullToRefresh>
             <WhatsAppBubble />
             <BottomNav />
           </div>
