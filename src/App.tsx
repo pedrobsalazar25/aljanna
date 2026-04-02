@@ -9,6 +9,7 @@ import BottomNav from "@/components/BottomNav";
 import TopNav from "@/components/TopNav";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
 import ScrollToTop from "@/components/ScrollToTop";
+import PullToRefresh from "@/components/PullToRefresh";
 import HomePage from "@/pages/HomePage";
 import MenuCategoryPage from "@/pages/MenuCategoryPage";
 import ProductPage from "@/pages/ProductPage";
