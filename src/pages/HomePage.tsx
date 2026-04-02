@@ -170,6 +170,9 @@ const HomePage = () => {
         </Carousel>
       </section>
 
+      {/* Instagram Feed */}
+      <InstagramFeed />
+
       {/* Info Block */}
       <section id="contact-section" className="px-4 mt-10 mb-6">
         <h2 className="font-body text-xl font-bold text-foreground mb-4">Encuéntranos</h2>
