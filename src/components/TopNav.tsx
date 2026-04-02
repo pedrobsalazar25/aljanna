@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Menu,
@@ -12,6 +12,7 @@ import {
   CalendarDays,
   Phone,
 } from "lucide-react";
+import { menuItems } from "@/data/menuData";
 import logo from "@/assets/logo.png";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
@@ -56,9 +57,33 @@ const socialLinks = [
 const TopNav = () => {
   const navigate = useNavigate();
   const { totalItems } = useCart();
-  const { currency, setCurrency, bcvRate } = useCurrency();
+  const { currency, setCurrency, bcvRate, formatCurrency } = useCurrency();
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
   const [sheetOpen, setSheetOpen] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+
+  const searchResults = useMemo(() => {
+    if (!searchQuery.trim()) return [];
+    const q = searchQuery.toLowerCase();
+    return menuItems.filter(
+      (item) =>
+        item.name.toLowerCase().includes(q) ||
+        item.description.toLowerCase().includes(q)
+    ).slice(0, 8);
+  }, [searchQuery]);
+
+  // Close search on outside click
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
+        setSearchQuery("");
+      }
+    };
+    if (searchOpen) document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [searchOpen]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-gold/20">
@@ -180,7 +205,10 @@ const TopNav = () => {
 
         {/* Search toggle */}
         <button
-          onClick={() => setSearchOpen(!searchOpen)}
+          onClick={() => {
+            setSearchOpen(!searchOpen);
+            if (searchOpen) setSearchQuery("");
+          }}
           className="text-cream/80 hover:text-gold transition-colors p-1"
         >
           {searchOpen ? (
@@ -193,16 +221,58 @@ const TopNav = () => {
 
       {/* Search bar (expandable) */}
       {searchOpen && (
-        <div className="px-4 pb-3 animate-fade-up">
+        <div ref={searchRef} className="px-4 pb-3 animate-fade-up relative">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-cream/40" />
             <input
               autoFocus
               type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Buscar platos, postres, bebidas..."
               className="w-full bg-cream/10 border border-gold/20 rounded-full pl-9 pr-4 py-2 text-sm text-cream placeholder:text-cream/40 font-body focus:outline-none focus:border-gold/50 transition-colors"
             />
           </div>
+
+          {/* Search Results Dropdown */}
+          {searchQuery.trim() && (
+            <div className="absolute left-4 right-4 top-full mt-1 glass-dark border border-gold/20 rounded-xl overflow-hidden shadow-xl z-50 max-h-72 overflow-y-auto">
+              {searchResults.length === 0 ? (
+                <p className="text-cream/50 text-sm font-body text-center py-4">
+                  No se encontraron resultados
+                </p>
+              ) : (
+                searchResults.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => {
+                      navigate(`/plato/${item.id}`);
+                      setSearchOpen(false);
+                      setSearchQuery("");
+                    }}
+                    className="flex items-center gap-3 w-full px-3 py-2.5 hover:bg-gold/10 transition-colors text-left"
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-10 h-10 rounded-lg object-cover flex-shrink-0"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm font-body font-semibold text-cream truncate">
+                        {item.name}
+                      </p>
+                      <p className="text-[11px] font-body text-cream/50 truncate">
+                        {item.description}
+                      </p>
+                    </div>
+                    <span className="text-gold font-body font-bold text-sm flex-shrink-0">
+                      {formatCurrency(item.price)}
+                    </span>
+                  </button>
+                ))
+              )}
+            </div>
+          )}
         </div>
       )}
     </nav>
