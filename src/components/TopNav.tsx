@@ -57,7 +57,7 @@ const socialLinks = [
 const TopNav = () => {
   const navigate = useNavigate();
   const { totalItems } = useCart();
-  const { currency, setCurrency, bcvRate } = useCurrency();
+  const { currency, setCurrency, bcvRate, formatCurrency } = useCurrency();
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [sheetOpen, setSheetOpen] = useState(false);
