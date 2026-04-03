@@ -6,7 +6,7 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { getItemById, getPairsWellWith, getItemsByCategory } from "@/data/menuData";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
-import MenuCard from "@/components/MenuCard";
+import MenuCard, { MenuCardSkeleton } from "@/components/MenuCard";
 
 const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
