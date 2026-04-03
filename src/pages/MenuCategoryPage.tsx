@@ -1,7 +1,8 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { getItemsByCategory, type Category } from "@/data/menuData";
-import MenuCard from "@/components/MenuCard";
+import MenuCard, { MenuCardSkeleton } from "@/components/MenuCard";
 
 const categoryLabels: Record<Category, string> = {
   cocina: "Cocina Turca",
@@ -22,6 +23,13 @@ interface MenuCategoryPageProps {
 const MenuCategoryPage = ({ category }: MenuCategoryPageProps) => {
   const navigate = useNavigate();
   const items = getItemsByCategory(category);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    const t = setTimeout(() => setLoading(false), 400);
+    return () => clearTimeout(t);
+  }, [category]);
 
   return (
     <div className="pb-20 min-h-screen">
@@ -38,9 +46,10 @@ const MenuCategoryPage = ({ category }: MenuCategoryPageProps) => {
 
       {/* Grid */}
       <div className="px-4 mt-4 grid grid-cols-2 gap-3">
-        {items.map((item) => (
-          <MenuCard key={item.id} item={item} />
-        ))}
+        {loading
+          ? Array.from({ length: 6 }).map((_, i) => <MenuCardSkeleton key={i} />)
+          : items.map((item) => <MenuCard key={item.id} item={item} />)
+        }
       </div>
     </div>
   );
