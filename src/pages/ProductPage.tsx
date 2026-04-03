@@ -61,8 +61,18 @@ const ProductPage = () => {
     <div className="pb-20 min-h-screen bg-cream">
       {/* Hero Image */}
       <div className="relative h-[54vh] min-h-[384px] bg-cream">
-        <div className="px-4 pt-4 pb-2">
-          <img src={item.image} alt={item.name} className="w-full h-full object-cover rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.45)]" />
+        <div className="px-4 pt-4 pb-2 relative">
+          {!heroLoaded && (
+            <div className="w-full h-full absolute inset-0 px-4 pt-4 pb-2">
+              <div className="w-full h-full rounded-2xl bg-primary/10 animate-pulse" />
+            </div>
+          )}
+          <img
+            src={item.image}
+            alt={item.name}
+            className={`w-full h-full object-cover rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.45)] transition-opacity duration-300 ${heroLoaded ? "opacity-100" : "opacity-0"}`}
+            onLoad={() => setHeroLoaded(true)}
+          />
         </div>
         <button
           onClick={() => navigate(-1)}
