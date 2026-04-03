@@ -1,3 +1,4 @@
+import { lazy, Suspense } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -10,12 +11,13 @@ import TopNav from "@/components/TopNav";
 import WhatsAppBubble from "@/components/WhatsAppBubble";
 import ScrollToTop from "@/components/ScrollToTop";
 import PullToRefresh from "@/components/PullToRefresh";
-import HomePage from "@/pages/HomePage";
-import MenuCategoryPage from "@/pages/MenuCategoryPage";
-import ProductPage from "@/pages/ProductPage";
-import CartPage from "@/pages/CartPage";
-import EventsPage from "@/pages/EventsPage";
-import NotFound from "@/pages/NotFound";
+
+const HomePage = lazy(() => import("@/pages/HomePage"));
+const MenuCategoryPage = lazy(() => import("@/pages/MenuCategoryPage"));
+const ProductPage = lazy(() => import("@/pages/ProductPage"));
+const CartPage = lazy(() => import("@/pages/CartPage"));
+const EventsPage = lazy(() => import("@/pages/EventsPage"));
+const NotFound = lazy(() => import("@/pages/NotFound"));
 
 const queryClient = new QueryClient();
 
