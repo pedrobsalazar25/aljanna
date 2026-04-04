@@ -78,6 +78,7 @@ export const menuItems: MenuItem[] = [
     description: "Masa desmenuzada con relleno de crema y pistachos",
     price: 7.99,
     image: kunafaImg,
+    images: [kunafaImg, kunefeAltImg],
     category: "postres",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-macuto"],
