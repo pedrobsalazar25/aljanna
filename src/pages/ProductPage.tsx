@@ -1,6 +1,6 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, ChevronRight, Share2 } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { getItemById, getPairsWellWith, getItemsByCategory } from "@/data/menuData";
