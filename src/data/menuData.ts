@@ -19,6 +19,7 @@ import kofteImg from "@/assets/dishes/Kofte.png";
 import kunafaImg from "@/assets/dishes/Kunafa.png";
 import kunefeAltImg from "@/assets/dishes/kunefe.jpg";
 import lahmacunImg from "@/assets/dishes/Lahmacun.png";
+import lahmacunAltImg from "@/assets/dishes/lahmacun.jpg";
 import mezeImg from "@/assets/dishes/Meze.png";
 import pescadoImg from "@/assets/dishes/Pescado_a_la_Parrilla.png";
 
