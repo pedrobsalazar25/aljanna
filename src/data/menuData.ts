@@ -211,6 +211,7 @@ export const menuItems: MenuItem[] = [
     description: "Pizza turca fina con carne molida",
     price: 9.99,
     image: lahmacunImg,
+    images: [lahmacunImg, lahmacunAltImg],
     category: "cocina",
     pairsWellWith: ["cerveza-brahva"],
   },
