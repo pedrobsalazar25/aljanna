@@ -1,8 +1,8 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { ArrowLeft, Minus, Plus, ChevronRight, Share2 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Autoplay from "embla-carousel-autoplay";
-import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from "@/components/ui/carousel";
 import { getItemById, getPairsWellWith, getItemsByCategory } from "@/data/menuData";
 import { useCart } from "@/context/CartContext";
 import { useCurrency } from "@/context/CurrencyContext";
@@ -15,7 +15,18 @@ const ProductPage = () => {
   const { formatCurrency } = useCurrency();
   const [quantity, setQuantity] = useState(1);
   const [shareOpen, setShareOpen] = useState(false);
-  const [heroLoaded, setHeroLoaded] = useState(false);
+  const [heroLoaded, setHeroLoaded] = useState<Record<number, boolean>>({});
+  const [heroApi, setHeroApi] = useState<CarouselApi>();
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  // Track hero carousel index
+  useEffect(() => {
+    if (!heroApi) return;
+    const onSelect = () => setHeroIndex(heroApi.selectedScrollSnap());
+    heroApi.on("select", onSelect);
+    onSelect();
+    return () => { heroApi.off("select", onSelect); };
+  }, [heroApi]);
 
   const item = getItemById(id || "");
   if (!item) {
@@ -25,6 +36,9 @@ const ProductPage = () => {
       </div>
     );
   }
+
+  const heroImages = item.images && item.images.length > 0 ? item.images : [item.image];
+  const hasMultipleImages = heroImages.length > 1;
 
   const pairs = getPairsWellWith(item);
   const categoryItems = getItemsByCategory(item.category).filter((i) => i.id !== item.id);
@@ -59,27 +73,75 @@ const ProductPage = () => {
 
   return (
     <div className="pb-20 min-h-screen bg-cream">
-      {/* Hero Image */}
+      {/* Hero Image Gallery */}
       <div className="relative h-[54vh] min-h-[384px] bg-cream">
-        <div className="px-4 pt-4 pb-2 relative">
-          {!heroLoaded && (
-            <div className="w-full h-full absolute inset-0 px-4 pt-4 pb-2">
-              <div className="w-full h-full rounded-2xl bg-primary/10 animate-pulse" />
-            </div>
+        <div className="px-4 pt-4 pb-2 relative h-full">
+          {hasMultipleImages ? (
+            <Carousel
+              opts={{ align: "start", loop: true }}
+              setApi={setHeroApi}
+              className="w-full h-full"
+            >
+              <CarouselContent className="-ml-0 h-full">
+                {heroImages.map((img, idx) => (
+                  <CarouselItem key={idx} className="pl-0 h-full">
+                    <div className="relative w-full h-full">
+                      {!heroLoaded[idx] && (
+                        <div className="absolute inset-0 rounded-2xl bg-primary/10 animate-pulse" />
+                      )}
+                      <img
+                        src={img}
+                        alt={`${item.name} - foto ${idx + 1}`}
+                        className={`w-full h-full object-cover rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.45)] transition-opacity duration-300 ${heroLoaded[idx] ? "opacity-100" : "opacity-0"}`}
+                        onLoad={() => setHeroLoaded((prev) => ({ ...prev, [idx]: true }))}
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              {/* Dot indicators */}
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                {heroImages.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => heroApi?.scrollTo(idx)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      idx === heroIndex
+                        ? "bg-accent w-5"
+                        : "bg-white/60"
+                    }`}
+                  />
+                ))}
+              </div>
+            </Carousel>
+          ) : (
+            <>
+              {!heroLoaded[0] && (
+                <div className="absolute inset-0 px-4 pt-4 pb-2">
+                  <div className="w-full h-full rounded-2xl bg-primary/10 animate-pulse" />
+                </div>
+              )}
+              <img
+                src={heroImages[0]}
+                alt={item.name}
+                className={`w-full h-full object-cover rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.45)] transition-opacity duration-300 ${heroLoaded[0] ? "opacity-100" : "opacity-0"}`}
+                onLoad={() => setHeroLoaded((prev) => ({ ...prev, 0: true }))}
+              />
+            </>
           )}
-          <img
-            src={item.image}
-            alt={item.name}
-            className={`w-full h-full object-cover rounded-2xl shadow-[0_8px_30px_rgba(0,0,0,0.45)] transition-opacity duration-300 ${heroLoaded ? "opacity-100" : "opacity-0"}`}
-            onLoad={() => setHeroLoaded(true)}
-          />
         </div>
         <button
           onClick={() => navigate(-1)}
-          className="absolute top-6 left-6 w-10 h-10 rounded-full glass flex items-center justify-center"
+          className="absolute top-6 left-6 w-10 h-10 rounded-full glass flex items-center justify-center z-10"
         >
           <ArrowLeft className="w-5 h-5 text-cream" strokeWidth={1.5} />
         </button>
+        {/* Image counter badge */}
+        {hasMultipleImages && (
+          <div className="absolute top-6 right-6 bg-black/50 backdrop-blur-sm text-white text-xs font-body px-2.5 py-1 rounded-full z-10">
+            {heroIndex + 1} / {heroImages.length}
+          </div>
+        )}
       </div>
 
       {/* Title below hero */}
