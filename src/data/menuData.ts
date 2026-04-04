@@ -10,6 +10,8 @@ import crispyHoneyImg from "@/assets/dishes/Crispy_Honey_Pastry.png";
 import dedosAzucarImg from "@/assets/dishes/Dedos_de_Azucar.png";
 import deliciasTurcasImg from "@/assets/dishes/Delicias_Turcas.png";
 import donerKebabImg from "@/assets/dishes/Doner_Kebab.png";
+import kebabPlatterAltImg from "@/assets/dishes/kebab-platter.jpg";
+import shawarmaAltImg from "@/assets/dishes/shawarma.jpg";
 import halvaImg from "@/assets/dishes/Halva.png";
 import kadayifImg from "@/assets/dishes/Kadayif.png";
 import kebabAdanaImg from "@/assets/dishes/Kebab_Adana.png";
