@@ -192,6 +192,7 @@ export const menuItems: MenuItem[] = [
     description: "Carne asada en rodajas con lechuga y tomate",
     price: 11.99,
     image: donerKebabImg,
+    images: [donerKebabImg, kebabPlatterAltImg, shawarmaAltImg],
     category: "cocina",
     pairsWellWith: ["cerveza-brahva", "cerveza-macuto"],
   },
