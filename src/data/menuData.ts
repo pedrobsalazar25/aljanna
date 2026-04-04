@@ -1,5 +1,6 @@
 // Real dish images (uploaded)
 import baklavaImg from "@/assets/dishes/Baklava.png";
+import baklavaAltImg from "@/assets/dishes/baklava.jpg";
 import borekImg from "@/assets/dishes/Borek.png";
 import cervezaBrahvaImg from "@/assets/dishes/Cerveza_Brahva.png";
 import cervezaMacutoImg from "@/assets/dishes/Cerveza_Macuto.png";
@@ -9,12 +10,16 @@ import crispyHoneyImg from "@/assets/dishes/Crispy_Honey_Pastry.png";
 import dedosAzucarImg from "@/assets/dishes/Dedos_de_Azucar.png";
 import deliciasTurcasImg from "@/assets/dishes/Delicias_Turcas.png";
 import donerKebabImg from "@/assets/dishes/Doner_Kebab.png";
+import kebabPlatterAltImg from "@/assets/dishes/kebab-platter.jpg";
+import shawarmaAltImg from "@/assets/dishes/shawarma.jpg";
 import halvaImg from "@/assets/dishes/Halva.png";
 import kadayifImg from "@/assets/dishes/Kadayif.png";
 import kebabAdanaImg from "@/assets/dishes/Kebab_Adana.png";
 import kofteImg from "@/assets/dishes/Kofte.png";
 import kunafaImg from "@/assets/dishes/Kunafa.png";
+import kunefeAltImg from "@/assets/dishes/kunefe.jpg";
 import lahmacunImg from "@/assets/dishes/Lahmacun.png";
+import lahmacunAltImg from "@/assets/dishes/lahmacun.jpg";
 import mezeImg from "@/assets/dishes/Meze.png";
 import pescadoImg from "@/assets/dishes/Pescado_a_la_Parrilla.png";
 
@@ -62,6 +67,7 @@ export const menuItems: MenuItem[] = [
     description: "Hojaldre crujiente con capas de miel y pistachos",
     price: 8.99,
     image: baklavaImg,
+    images: [baklavaImg, baklavaAltImg],
     category: "postres",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-polar", "cerveza-brahva"],
@@ -72,6 +78,7 @@ export const menuItems: MenuItem[] = [
     description: "Masa desmenuzada con relleno de crema y pistachos",
     price: 7.99,
     image: kunafaImg,
+    images: [kunafaImg, kunefeAltImg],
     category: "postres",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-macuto"],
@@ -185,6 +192,7 @@ export const menuItems: MenuItem[] = [
     description: "Carne asada en rodajas con lechuga y tomate",
     price: 11.99,
     image: donerKebabImg,
+    images: [donerKebabImg, kebabPlatterAltImg, shawarmaAltImg],
     category: "cocina",
     pairsWellWith: ["cerveza-brahva", "cerveza-macuto"],
   },
@@ -203,6 +211,7 @@ export const menuItems: MenuItem[] = [
     description: "Pizza turca fina con carne molida",
     price: 9.99,
     image: lahmacunImg,
+    images: [lahmacunImg, lahmacunAltImg],
     category: "cocina",
     pairsWellWith: ["cerveza-brahva"],
   },
