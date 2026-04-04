@@ -19,6 +19,15 @@ const ProductPage = () => {
   const [heroApi, setHeroApi] = useState<CarouselApi>();
   const [heroIndex, setHeroIndex] = useState(0);
 
+  // Track hero carousel index
+  useEffect(() => {
+    if (!heroApi) return;
+    const onSelect = () => setHeroIndex(heroApi.selectedScrollSnap());
+    heroApi.on("select", onSelect);
+    onSelect();
+    return () => { heroApi.off("select", onSelect); };
+  }, [heroApi]);
+
   const item = getItemById(id || "");
   if (!item) {
     return (
@@ -61,15 +70,6 @@ const ProductPage = () => {
     navigator.clipboard?.writeText(`${item.name} - Al Janna Sweet 🍽️ ${shareUrl}`);
     alert("¡Enlace copiado! Pégalo en tu historia o mensaje de Instagram.");
   };
-
-  // Track hero carousel index
-  React.useEffect(() => {
-    if (!heroApi) return;
-    const onSelect = () => setHeroIndex(heroApi.selectedScrollSnap());
-    heroApi.on("select", onSelect);
-    onSelect();
-    return () => { heroApi.off("select", onSelect); };
-  }, [heroApi]);
 
   return (
     <div className="pb-20 min-h-screen bg-cream">
