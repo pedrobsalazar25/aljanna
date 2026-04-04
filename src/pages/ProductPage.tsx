@@ -15,7 +15,9 @@ const ProductPage = () => {
   const { formatCurrency } = useCurrency();
   const [quantity, setQuantity] = useState(1);
   const [shareOpen, setShareOpen] = useState(false);
-  const [heroLoaded, setHeroLoaded] = useState(false);
+  const [heroLoaded, setHeroLoaded] = useState<Record<number, boolean>>({});
+  const [heroApi, setHeroApi] = useState<CarouselApi>();
+  const [heroIndex, setHeroIndex] = useState(0);
 
   const item = getItemById(id || "");
   if (!item) {
