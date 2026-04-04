@@ -67,6 +67,7 @@ export const menuItems: MenuItem[] = [
     description: "Hojaldre crujiente con capas de miel y pistachos",
     price: 8.99,
     image: baklavaImg,
+    images: [baklavaImg, baklavaAltImg],
     category: "postres",
     isChefRecommendation: true,
     pairsWellWith: ["cerveza-polar", "cerveza-brahva"],
