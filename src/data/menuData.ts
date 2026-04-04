@@ -1,5 +1,6 @@
 // Real dish images (uploaded)
 import baklavaImg from "@/assets/dishes/Baklava.png";
+import baklavaAltImg from "@/assets/dishes/baklava.jpg";
 import borekImg from "@/assets/dishes/Borek.png";
 import cervezaBrahvaImg from "@/assets/dishes/Cerveza_Brahva.png";
 import cervezaMacutoImg from "@/assets/dishes/Cerveza_Macuto.png";
