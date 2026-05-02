@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, useEffect, useCallback, type ReactNode } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 type Currency = "USD" | "VES";
 
@@ -11,12 +12,23 @@ interface CurrencyContextType {
 
 const CurrencyContext = createContext<CurrencyContextType | undefined>(undefined);
 
+const RATE_CACHE_KEY = "bcvRateCache";
+
 export const CurrencyProvider = ({ children }: { children: ReactNode }) => {
   const [currency, setCurrencyState] = useState<Currency>(() => {
     const stored = localStorage.getItem("currency");
     return stored === "VES" ? "VES" : "USD";
   });
-  const [bcvRate, setBcvRate] = useState<number | null>(null);
+  const [bcvRate, setBcvRate] = useState<number | null>(() => {
+    try {
+      const cached = localStorage.getItem(RATE_CACHE_KEY);
+      if (cached) {
+        const { rate } = JSON.parse(cached);
+        if (typeof rate === "number" && rate > 0) return rate;
+      }
+    } catch { /* ignore */ }
+    return null;
+  });
 
   const setCurrency = useCallback((c: Currency) => {
     setCurrencyState(c);
@@ -25,25 +37,21 @@ export const CurrencyProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const fetchRate = async () => {
-      const apis = [
-        "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://pydolarve.org/api/v2/dollar?page=bcv"),
-        "https://api.allorigins.win/raw?url=" + encodeURIComponent("https://bcv-api.rafnixg.dev/rates/"),
-      ];
-      for (const url of apis) {
-        try {
-          const res = await fetch(url);
-          const data = await res.json();
-          // pydolarve format
-          if (data?.monitors?.usd?.price) {
-            setBcvRate(parseFloat(data.monitors.usd.price));
-            return;
-          }
-          // rafnixg format: {"dollar": 457.07, "date": "..."}
-          if (typeof data?.dollar === "number") { setBcvRate(data.dollar); return; }
-          if (data?.USD?.rate) { setBcvRate(parseFloat(data.USD.rate)); return; }
-          if (data?.rates?.USD) { setBcvRate(parseFloat(data.rates.USD)); return; }
-          if (typeof data?.USD === "number") { setBcvRate(data.USD); return; }
-        } catch { /* try next */ }
+      try {
+        const { data, error } = await supabase.functions.invoke("get-bcv-rate");
+        if (error) {
+          console.error("Failed to fetch BCV rate:", error);
+          return;
+        }
+        if (data?.rate && typeof data.rate === "number" && data.rate > 0) {
+          setBcvRate(data.rate);
+          localStorage.setItem(
+            RATE_CACHE_KEY,
+            JSON.stringify({ rate: data.rate, fetchedAt: Date.now() })
+          );
+        }
+      } catch (e) {
+        console.error("Rate fetch error:", e);
       }
     };
     fetchRate();
